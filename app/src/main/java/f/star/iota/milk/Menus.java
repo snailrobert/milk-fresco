@@ -218,4 +218,10 @@ public interface Menus {
     int MENU_XSNVSHEN_NVSHEN_ID = 73;
     int MENU_XSNVSHEN_HDTU_ID = 74;
 
+    String MENU_MM8MM88 = "MM8MM88";
+    int MENU_MM8MM88_ID = 75;
+
+    String MENU_80ZU = "80ZU";
+    int MENU_80ZU_ID = 76;
+
 }

@@ -124,7 +124,7 @@ public class WidgetActivity extends BaseActivity implements CompoundButton.OnChe
         mContext.getTheme().resolveAttribute(R.attr.colorAccent, typedValue, true);
         return new MaterialNumberPicker.Builder(mContext)
                 .minValue(1)
-                .maxValue(Integer.MAX_VALUE)
+                .maxValue(60)
                 .defaultValue(type == 1 ? WidgetConfig.getJuziInterval(aContext) : WidgetConfig.getTodayInHistroyInterval(aContext))
                 .separatorColor(typedValue.data)
                 .textColor(typedValue.data)

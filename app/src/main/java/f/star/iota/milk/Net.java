@@ -364,4 +364,8 @@ public class Net {
 
     public static final String XSNVSHEN_BASE = "https://www.xsnvshen.com";
 
+    public static final String MM8MM88_BASE = "http://www.mm8mm88.com";
+
+    public static final String ZU80_BASE = "https://www.80zu.com";
+
 }

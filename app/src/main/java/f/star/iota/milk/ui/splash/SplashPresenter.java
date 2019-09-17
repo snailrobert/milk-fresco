@@ -323,7 +323,7 @@ public class SplashPresenter implements SplashContract.Presenter {
     }
 
     private void getWallHaven() {
-        String url = "https://alpha.wallhaven.cc/latest?page=" + (new Random().nextInt(12000) + 1);
+        String url = "https://wallhaven.cc/latest?page=" + (new Random().nextInt(12000) + 1);
         mCompositeDisposable.add(
                 OkGo.<String>get(url)
                         .converter(new StringConvert())
