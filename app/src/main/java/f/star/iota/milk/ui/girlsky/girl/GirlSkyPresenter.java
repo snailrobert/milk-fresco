@@ -35,7 +35,7 @@ public class GirlSkyPresenter extends StringPresenter<List<GirlSkyBean>> {
             bean.setHeaders(headers);
             String description = element.select("a > span").text();
             bean.setDescription(description);
-            String date = element.select("div.TypePicInfos > div.txtInfo > strong.IcoTime").text();
+            String date = element.select("div.TypePicInfos > div.txtInfo > em.IcoTime").text();
             bean.setDate(date);
             list.add(bean);
         }

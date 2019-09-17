@@ -1,21 +1,16 @@
 package f.star.iota.milk.ui.bilibili;
 
-import android.app.Activity;
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.CardView;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
-import com.github.rubensousa.floatingtoolbar.FloatingToolbar;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import f.star.iota.milk.Menus;
 import f.star.iota.milk.R;
 import f.star.iota.milk.base.BaseViewHolder;
@@ -25,12 +20,14 @@ import f.star.iota.milk.fresco.FrescoLoader;
 
 public class BilibiliViewHolder extends BaseViewHolder<BilibiliBean> {
 
-    @BindView(R.id.text_view_description)
-    TextView mTextViewDescription;
-    @BindView(R.id.simple_drawee_view_image)
-    SimpleDraweeView mSimpleDraweeView;
     @BindView(R.id.card_view)
     CardView mCardView;
+    @BindView(R.id.simple_drawee_view_image)
+    SimpleDraweeView mSimpleDraweeView;
+
+
+    private final int width = 300;
+    private final int height = 300;
 
     public BilibiliViewHolder(View itemView) {
         super(itemView);
@@ -39,8 +36,7 @@ public class BilibiliViewHolder extends BaseViewHolder<BilibiliBean> {
     @Override
     public void bindView(final List<BilibiliBean> beans) {
         final BilibiliBean bean = beans.get(getAdapterPosition());
-        mTextViewDescription.setText(bean.getTitle());
-        FrescoLoader.load(mSimpleDraweeView, bean.getPreview());
+        FrescoLoader.load(mSimpleDraweeView, bean.getUrl(),width,height);
         mCardView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -61,7 +57,7 @@ public class BilibiliViewHolder extends BaseViewHolder<BilibiliBean> {
                         .setPositiveButton("下载", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                download(bean.getUrl(), bean.getPreview(),
+                                download(bean.getUrl(), bean.getUrl(),
                                         Menus.MENU_BILIBILI, null);
                             }
                         })
@@ -72,31 +68,13 @@ public class BilibiliViewHolder extends BaseViewHolder<BilibiliBean> {
         mCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                show(getProcessingCompletedBeans(beans));
+                List<PCBean> imgs = new ArrayList<>();
+                for (BilibiliBean bean : beans) {
+                    imgs.add(new PCBean(bean.getUrl(), bean.getUrl(), Menus.MENU_GAMERSKY,
+                            "下载地址：" + bean.getUrl()));
+                }
+                show(imgs);
             }
         });
-        ((FloatingToolbar) ButterKnife.findById((Activity) mContext, R.id.floating_toolbar)).setClickListener(new FloatingToolbar.ItemClickListener() {
-            @Override
-            public void onItemClick(MenuItem menuItem) {
-                batchDownload(getProcessingCompletedBeans(beans));
-            }
-
-            @Override
-            public void onItemLongClick(MenuItem menuItem) {
-
-            }
-        });
-    }
-
-    @Override
-    protected List<PCBean> getProcessingCompletedBeans(List<BilibiliBean> beans) {
-        List<PCBean> imgs = new ArrayList<>();
-        for (BilibiliBean bean : beans) {
-            imgs.add(new PCBean(bean.getUrl(), bean.getPreview(), Menus.MENU_BILIBILI,
-                    "标题：" + bean.getTitle() + "\n\n" +
-                            "下载地址：" + bean.getUrl()
-            ));
-        }
-        return imgs;
     }
 }

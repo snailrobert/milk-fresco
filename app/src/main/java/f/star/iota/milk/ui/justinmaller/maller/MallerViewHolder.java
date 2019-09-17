@@ -57,7 +57,7 @@ public class MallerViewHolder extends BaseViewHolder<MallerBean> {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 download(bean.getUrl(), bean.getUrl(),
-                                        Menus.MENU_APIC, null);
+                                        Menus.MENU_JUSTINMALLER, null);
                             }
                         })
                         .show();
@@ -87,7 +87,7 @@ public class MallerViewHolder extends BaseViewHolder<MallerBean> {
     protected List<PCBean> getProcessingCompletedBeans(List<MallerBean> beans) {
         List<PCBean> imgs = new ArrayList<>();
         for (MallerBean bean : beans) {
-            imgs.add(new PCBean(bean.getUrl(), bean.getUrl(), Menus.MENU_APIC,
+            imgs.add(new PCBean(bean.getUrl(), bean.getUrl(), Menus.MENU_JUSTINMALLER,
                     "下载地址：" + bean.getUrl()));
         }
         return imgs;

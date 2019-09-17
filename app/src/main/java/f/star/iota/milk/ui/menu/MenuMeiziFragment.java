@@ -11,6 +11,7 @@ import f.star.iota.milk.base.BaseFragment;
 import f.star.iota.milk.config.OtherConfig;
 import f.star.iota.milk.ui.acg17.acg.ACG17PagerFragment;
 import f.star.iota.milk.ui.bcy.ranking.BCYRankingPagerFragment;
+import f.star.iota.milk.ui.bilibili.BilibiliPagerFragment;
 import f.star.iota.milk.ui.chinagirlol.china.ChinaGirlOLPagerFragment;
 import f.star.iota.milk.ui.cosplayla.cosplay.CosplayLaFragment;
 import f.star.iota.milk.ui.gamersky.gamer.GamerSkyFragment;
@@ -33,8 +34,10 @@ import f.star.iota.milk.ui.ncjlh.jlh.NcJlhPagerFragment;
 import f.star.iota.milk.ui.rosimm.rosi.ROSIMMPagerFragment;
 import f.star.iota.milk.ui.umei.u.UMEIFragment;
 import f.star.iota.milk.ui.www005tv.www.WWW005TVFragment;
+import f.star.iota.milk.ui.www52guzhuang.guzhuang.GuZhuangPagerFragment;
 import f.star.iota.milk.ui.wwwmm131net.www.WWWMM131NETPagerFragment;
 import f.star.iota.milk.ui.xiuren.xiu.XiuRenFragment;
+import f.star.iota.milk.ui.xsnvshen.xs.XSNvShenPagerFragment;
 import f.star.iota.milk.ui.yeitu.yei.YeiTuPagerFragment;
 import f.star.iota.milk.ui.yuleba.yule.YuLeBaPagerFragment;
 
@@ -109,10 +112,14 @@ public class MenuMeiziFragment extends MenuFragment {
                 currentFragment = MeiTuMenPagerFragment.newInstance(MeiTuMenPagerFragment.TAG);
                 activity.setTitle(Menus.MENU_MEITUMEN);
                 break;
-            // case Menus.MENU_94TAOTU_ID:
-            //     currentFragment = WWW94TAOTUCOMFragment.newInstance(Net.WWW94TAOTUCOM);
-            //     activity.setTitle(Menus.MENU_94TAOTU);
-            //     break;
+            case Menus.MENU_52GUZHUANG_ID:
+                currentFragment = new GuZhuangPagerFragment();
+                activity.setTitle(Menus.MENU_52GUZHUANG);
+                break;
+            case Menus.MENU_BILIBILI_COS_ID:
+                currentFragment = BilibiliPagerFragment.newInstance(BilibiliPagerFragment.COS);
+                activity.setTitle(Menus.MENU_BILIBILI);
+                break;
             case Menus.MENU_MZITU_ID:
                 currentFragment = MZITUFragment.newInstance(Net.MZITU);
                 activity.setTitle(Menus.MENU_MZITU);
@@ -181,6 +188,19 @@ public class MenuMeiziFragment extends MenuFragment {
                 currentFragment = new NcJlhPagerFragment();
                 activity.setTitle(Menus.MENU_NCJLH);
                 break;
+
+            case Menus.MENU_XSNVSHEN_MEINV_ID:
+                currentFragment = XSNvShenPagerFragment.newInstance(XSNvShenPagerFragment.MEINV);
+                activity.setTitle(Menus.MENU_XSNVSHEN);
+                break;
+            case Menus.MENU_XSNVSHEN_NVSHEN_ID:
+                currentFragment = XSNvShenPagerFragment.newInstance(XSNvShenPagerFragment.NVSHEN);
+                activity.setTitle(Menus.MENU_XSNVSHEN);
+                break;
+            case Menus.MENU_XSNVSHEN_HDTU_ID:
+                currentFragment = XSNvShenPagerFragment.newInstance(XSNvShenPagerFragment.HDTU);
+                activity.setTitle(Menus.MENU_XSNVSHEN);
+                break;
         }
         activity.removeFragmentContainerChildrenViews();
         activity.showFragment(currentFragment);
@@ -203,6 +223,10 @@ public class MenuMeiziFragment extends MenuFragment {
                 Net.MOE005TV_BASE, "http://www.005.tv/templets/muban/moe_style/image/moe_logo.png", null));
         menu.add(new MenuBean(Menus.MENU_ACG_GAMERSKY_COS_ID, Menus.MENU_ACG_GAMERSKY,
                 Net.GAMERSKY_BASE, "http://image.gamersky.com/webimg13/acg/new/logo.png", null));
+        menu.add(new MenuBean(Menus.MENU_52GUZHUANG_ID, Menus.MENU_52GUZHUANG,
+                Net.WWW52GUZHUANG_BASE, "http://www.52guzhuang.com/template/54zz_lens_140908/deancss/logo.png", null));
+        menu.add(new MenuBean(Menus.MENU_BILIBILI_COS_ID, Menus.MENU_BILIBILI,
+                Net.BILIBILI_BASE, "http://static.hdslb.com/drawyoo/wallpaper/images/logo.png", null));
         menu.add(new MenuBean(Menus.MENU_GANK_ID, Menus.MENU_GANK,
                 Net.GANK_BASE, "https://ws1.sinaimg.cn/large/610dc034ly1fiiiyfcjdoj20u00u0ju0.jpg", null));
         menu.add(new MenuBean(Menus.MENU_MEITULU_ID, Menus.MENU_MEITULU,
@@ -221,9 +245,6 @@ public class MenuMeiziFragment extends MenuFragment {
                 Net.MEITUMEN_BASE, "https://f.meitumen.com/wp-content/uploads/2019/07/71a19774130be40.png", null));
         menu.add(new MenuBean(Menus.MENU_MEITUMEN_TAG_ID, Menus.MENU_MEITUMEN,
                 Net.MEITUMEN_BASE, "https://f.meitumen.com/wp-content/uploads/2019/07/71a19774130be40.png", null));
-        // menu.add(new MenuBean(Menus.MENU_94TAOTU_ID, Menus.MENU_94TAOTU,
-        //         Net.WWW94TAOTUCOM_BASE, "http://img.94taotu.com/data/t/0155/07/1503666691557_album.jpg", null));
-
         menu.add(new MenuBean(Menus.MENU_MZITU_ID, Menus.MENU_MZITU,
                 Net.MZITU_BASE, "https://ws1.sinaimg.cn/large/610dc034gy1fi678xgq1ij20pa0vlgo4.jpg", null));
         menu.add(new MenuBean(Menus.MENU_MMONLY_ID, Menus.MENU_MMONLY,
@@ -244,6 +265,14 @@ public class MenuMeiziFragment extends MenuFragment {
                 Net.GIRL_ATLAS_BASE, "http://static.meinvjpg.com/static/img/logo@2x.png", null));
         menu.add(new MenuBean(Menus.MENU_UMEI_ID, Menus.MENU_UMEI,
                 Net.UMEI, "http://www.umei.cc/images/logo4.png", null));
+
+        menu.add(new MenuBean(Menus.MENU_XSNVSHEN_MEINV_ID, Menus.MENU_XSNVSHEN,
+                Net.XSNVSHEN_BASE, "https://res.xsnvshen.com/images/logo_girl.png", null));
+        menu.add(new MenuBean(Menus.MENU_XSNVSHEN_NVSHEN_ID, Menus.MENU_XSNVSHEN,
+                Net.XSNVSHEN_BASE, "https://res.xsnvshen.com/images/logo_girl.png", null));
+        menu.add(new MenuBean(Menus.MENU_XSNVSHEN_HDTU_ID, Menus.MENU_XSNVSHEN,
+                Net.XSNVSHEN_BASE, "https://res.xsnvshen.com/images/logo_girl.png", null));
+
         menu.add(new MenuBean(Menus.MENU_MMJPG_ID, Menus.MENU_MMJPG,
                 Net.MMJPG_BASE, "http://img.mmjpg.com/2015/295/1.jpg", null));
         menu.add(new MenuBean(Menus.MENU_ITUBA_ID, Menus.MENU_ITUBA,

@@ -1,15 +1,13 @@
-package f.star.iota.milk.ui.bilibili;
-
-
-import com.google.gson.annotations.SerializedName;
+package f.star.iota.milk.ui.xsnvshen.shen;
 
 import f.star.iota.milk.base.BaseBean;
 
-class BilibiliBean extends BaseBean {
 
-
-    @SerializedName("img_src")
+class ShenBean extends BaseBean {
     private String url;
+
+    public ShenBean() {
+    }
 
     public String getUrl() {
         return url;

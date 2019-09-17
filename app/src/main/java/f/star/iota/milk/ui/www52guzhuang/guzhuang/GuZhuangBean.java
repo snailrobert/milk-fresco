@@ -1,15 +1,15 @@
-package f.star.iota.milk.ui.apic.a;
+package f.star.iota.milk.ui.www52guzhuang.guzhuang;
 
 
 import f.star.iota.milk.base.BaseBean;
 
-class ApicBean extends BaseBean {
+class GuZhuangBean extends BaseBean {
     private String preview;
     private String url;
     private String description;
     private String date;
 
-    ApicBean() {
+    GuZhuangBean() {
     }
 
     public String getPreview() {

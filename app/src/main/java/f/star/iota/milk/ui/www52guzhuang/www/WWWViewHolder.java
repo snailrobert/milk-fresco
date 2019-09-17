@@ -1,4 +1,4 @@
-package f.star.iota.milk.ui.apic.pic;
+package f.star.iota.milk.ui.www52guzhuang.www;
 
 
 import android.app.Activity;
@@ -22,20 +22,23 @@ import f.star.iota.milk.base.BaseViewHolder;
 import f.star.iota.milk.base.PCBean;
 import f.star.iota.milk.fresco.FrescoLoader;
 
-public class PicViewHolder extends BaseViewHolder<PicBean> {
+public class WWWViewHolder extends BaseViewHolder<WWWBean> {
     @BindView(R.id.card_view)
     CardView mCardView;
     @BindView(R.id.simple_drawee_view_image)
     SimpleDraweeView mSimpleDraweeView;
 
-    public PicViewHolder(View itemView) {
+    private final int width = 300;
+    private final int height = 300;
+
+    public WWWViewHolder(View itemView) {
         super(itemView);
     }
 
     @Override
-    public void bindView(final List<PicBean> beans) {
-        final PicBean bean = beans.get(getAdapterPosition());
-        FrescoLoader.load(mSimpleDraweeView, bean.getUrl());
+    public void bindView(final List<WWWBean> beans) {
+        final WWWBean bean = beans.get(getAdapterPosition());
+        FrescoLoader.load(mSimpleDraweeView, bean.getUrl(),width,height);
         mCardView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -57,7 +60,7 @@ public class PicViewHolder extends BaseViewHolder<PicBean> {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 download(bean.getUrl(), bean.getUrl(),
-                                        Menus.MENU_APIC, null);
+                                        Menus.MENU_52GUZHUANG, null);
                             }
                         })
                         .show();
@@ -84,11 +87,11 @@ public class PicViewHolder extends BaseViewHolder<PicBean> {
     }
 
     @Override
-    protected List<PCBean> getProcessingCompletedBeans(List<PicBean> beans) {
+    protected List<PCBean> getProcessingCompletedBeans(List<WWWBean> beans) {
         List<PCBean> imgs = new ArrayList<>();
-        for (PicBean bean : beans) {
-            imgs.add(new PCBean(bean.getUrl(), bean.getUrl(), Menus.MENU_APIC,
-                    "下载地址：" + bean.getUrl()));
+        for (WWWBean bean : beans) {
+            imgs.add(new PCBean(bean.getUrl(), bean.getUrl(), Menus.MENU_52GUZHUANG,
+                    "下载地址：" + bean.getUrl(), bean.getHeaders()));
         }
         return imgs;
     }

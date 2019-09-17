@@ -21,10 +21,10 @@ public class GirlZPresenter extends StringPresenter<List<GirlZBean>> {
     @Override
     protected List<GirlZBean> dealResponse(String s, HashMap<String, String> headers) {
         List<GirlZBean> list = new ArrayList<>();
-        Elements select = Jsoup.parse(s).select("section.entry-content > p > img");
+        Elements select = Jsoup.parse(s).select("div.gallery > figure.gallery-item");
         for (Element element : select) {
             GirlZBean bean = new GirlZBean();
-            String url = element.attr("src");
+            String url = element.select("div.gallery-icon > img").attr("src");
             url = url.substring(0, url.lastIndexOf("?"));
             bean.setUrl(url);
             bean.setHeaders(headers);

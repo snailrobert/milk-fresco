@@ -173,8 +173,13 @@ public class Net {
     public static final String MEITUMEN_GIF = "https://www.meitumen.com/gif";
     public static final String MEITUMEN_BASE = "https://www.meitumen.com";
 
-    public static final String WWW94TAOTUCOM = "http://www.94taotu.com/albums/page-";
-    public static final String WWW94TAOTUCOM_BASE = "http://www.94taotu.com";
+    public static final String WWW52GUZHUANG_GZMV = "http://www.52guzhuang.com/forum-45-";
+    public static final String WWW52GUZHUANG_HFMV = "http://www.52guzhuang.com/forum-59-";
+    public static final String WWW52GUZHUANG_QCMV = "http://www.52guzhuang.com/forum-44-";
+    public static final String WWW52GUZHUANG_COSPLAY = "http://www.52guzhuang.com/forum-46-";
+    public static final String WWW52GUZHUANG_HSMV = "http://www.52guzhuang.com/forum-47-";
+    public static final String WWW52GUZHUANG_ETMV = "http://www.52guzhuang.com/forum-57-";
+    public static final String WWW52GUZHUANG_BASE = "http://www.52guzhuang.com/";
 
     public static final String MZITU = "http://www.mzitu.com/page/";
     public static final String MZITU_BASE = "http://www.mzitu.com";
@@ -283,7 +288,12 @@ public class Net {
 
     public static final String SIMPLEDESKTOPS = "http://simpledesktops.com/browse/";
 
-    public static final String BILIBILI = "http://h.bilibili.com/wallpaperApi?action=getOptions&page=";
+    public static final String BILIBILI_HOT_ILLUST = "https://api.vc.bilibili.com/link_draw/v2/Doc/list?category=illustration&type=hot&page_size=5&page_num=";
+    public static final String BILIBILI_NEW_ILLUST = "https://api.vc.bilibili.com/link_draw/v2/Doc/list?category=illustration&type=new&page_size=5&page_num=";
+    public static final String BILIBILI_HOT_COSPLAY = "https://api.vc.bilibili.com/link_draw/v2/Photo/list?category=cos&type=hot&page_size=2&page_num=";
+    public static final String BILIBILI_NEW_COSPLAY = "https://api.vc.bilibili.com/link_draw/v2/Photo/list?category=cos&type=new&page_size=2&page_num=";
+    public static final String BILIBILI_HOT_COSSIFU = "https://api.vc.bilibili.com/link_draw/v2/Photo/list?category=sifu&type=hot&page_size=2&page_num=";
+    public static final String BILIBILI_NEW_COSSIFU = "https://api.vc.bilibili.com/link_draw/v2/Photo/list?category=sifu&type=new&page_size=2&page_num=";
     public static final String BILIBILI_BASE = "http://h.bilibili.com";
 
     public static final String ARTSTATION = "https://www.artstation.com/projects.json?sorting=latest&page=";
@@ -350,5 +360,8 @@ public class Net {
 
 
     public static final String NCJLH_BASE = "http://www.ncjlh.com";
+
+
+    public static final String XSNVSHEN_BASE = "https://www.xsnvshen.com";
 
 }

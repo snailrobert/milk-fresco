@@ -9,7 +9,6 @@ import f.star.iota.milk.Net;
 import f.star.iota.milk.base.BaseActivity;
 import f.star.iota.milk.base.BaseFragment;
 import f.star.iota.milk.ui.alphacoders.AlphaCodersFragment;
-import f.star.iota.milk.ui.bilibili.BilibiliFragment;
 import f.star.iota.milk.ui.bing.BingFragment;
 import f.star.iota.milk.ui.gamersky.gamer.GamerSkyFragment;
 import f.star.iota.milk.ui.isujin.IsujinFragment;
@@ -33,11 +32,6 @@ public class MenuWallpaperFragment extends MenuFragment {
                 currentFragment = SimpleDesktopsFragment.newInstance(Net.SIMPLEDESKTOPS);
                 activity.setTitle(Menus.MENU_SIMPLEDESKTOPS);
                 break;
-            case Menus.MENU_BILIBILI_ID:
-                currentFragment = BilibiliFragment.newInstance(Net.BILIBILI);
-                activity.setTitle(Menus.MENU_BILIBILI);
-                break;
-
             case Menus.MENU_KUVVA_ID:
                 currentFragment = KuvvaFragment.newInstance(Net.KUVVA);
                 activity.setTitle(Menus.MENU_KUVVA);
@@ -84,13 +78,6 @@ public class MenuWallpaperFragment extends MenuFragment {
                 Net.SIMPLEDESKTOPS + 1,
                 "http://static.simpledesktops.com/uploads/desktops/2015/06/26/Overlap.png.295x184_q100.png",
                 null));
-        menu.add(new MenuBean(Menus.MENU_BILIBILI_ID,
-                Menus.MENU_BILIBILI,
-                Net.BILIBILI_BASE,
-                "http://static.hdslb.com/drawyoo/wallpaper/images/logo.png",
-                null
-        ));
-
         menu.add(new MenuBean(Menus.MENU_KUVVA_ID,
                 Menus.MENU_KUVVA,
                 Net.KUVVA_BASE,

@@ -12,6 +12,7 @@ public class BilibiliFragment extends ScrollImageFragment<BilibiliPresenter, Bil
         BilibiliFragment fragment = new BilibiliFragment();
         Bundle bundle = new Bundle();
         bundle.putString("base_url", url);
+        bundle.putInt("initial_page", 0);
         fragment.setArguments(bundle);
         return fragment;
     }

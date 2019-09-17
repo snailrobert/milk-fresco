@@ -20,7 +20,7 @@ public class BilibiliPresenter extends StringPresenter<List<BilibiliBean>> {
 
     @Override
     protected List<BilibiliBean> dealResponse(String s, HashMap<String, String> headers) {
-        Pattern pattern = Pattern.compile("\"detail\":\\[(.*?)\\]");
+        Pattern pattern = Pattern.compile("\"pictures\":\\[(.*?)\\]");
         Matcher matcher = pattern.matcher(s);
         StringBuilder sb = new StringBuilder();
         while (matcher.find()) {

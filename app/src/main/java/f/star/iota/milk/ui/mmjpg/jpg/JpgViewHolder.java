@@ -59,7 +59,7 @@ public class JpgViewHolder extends BaseViewHolder<JpgBean> {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 download(bean.getUrl(), bean.getUrl(),
-                                        Menus.MENU_APIC, null);
+                                        Menus.MENU_MMJPG, null);
                             }
                         })
                         .show();
@@ -89,7 +89,7 @@ public class JpgViewHolder extends BaseViewHolder<JpgBean> {
     protected List<PCBean> getProcessingCompletedBeans(List<JpgBean> beans) {
         List<PCBean> imgs = new ArrayList<>();
         for (JpgBean bean : beans) {
-            imgs.add(new PCBean(bean.getUrl(), bean.getUrl(), Menus.MENU_APIC,
+            imgs.add(new PCBean(bean.getUrl(), bean.getUrl(), Menus.MENU_MMJPG,
                     "下载地址：" + bean.getUrl()));
         }
         return imgs;

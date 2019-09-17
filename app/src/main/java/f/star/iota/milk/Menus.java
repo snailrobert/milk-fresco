@@ -75,8 +75,9 @@ public interface Menus {
     int MENU_MAG_MOE_MOE_ID = 21;
     int MENU_MAG_MOE_COS_STAR_ID = 22;
 
-    String MENU_APIC = "APIC";
-    int MENU_APIC_ID = 23;
+    String MENU_BILIBILI = "BILIBILI";
+    int MENU_BILIBILI_ILLUST_ID = 23;
+    int MENU_BILIBILI_COS_ID = 58;
 
     String MENU_ZEROCHAN = "ZEROCHAN";
     int MENU_ZEROCHAN_ID = 24;
@@ -105,8 +106,8 @@ public interface Menus {
     int MENU_MEITUMEN_MENU_ID = 32;
     int MENU_MEITUMEN_TAG_ID = 33;
 
-    // String MENU_94TAOTU = "94TAOTU";
-    // int MENU_94TAOTU_ID = 34;
+    String MENU_52GUZHUANG = "52GUZHUANG";
+    int MENU_52GUZHUANG_ID = 34;
 
     String MENU_MZITU = "MZITU";
     int MENU_MZITU_ID = 35;
@@ -173,9 +174,6 @@ public interface Menus {
     String MENU_SIMPLEDESKTOPS = "SIMPLEDESKTOPS";
     int MENU_SIMPLEDESKTOPS_ID = 57;
 
-    String MENU_BILIBILI = "BILIBILI";
-    int MENU_BILIBILI_ID = 58;
-
     String MENU_ARTSTATION = "ARTSTATION";
     int MENU_ARTSTATION_ID = 59;
 
@@ -214,4 +212,10 @@ public interface Menus {
 
     String MENU_NCJLH = "NCJLH";
     int MENU_NCJLH_ID = 71;
+
+    String MENU_XSNVSHEN = "XSNVSHEN";
+    int MENU_XSNVSHEN_MEINV_ID = 72;
+    int MENU_XSNVSHEN_NVSHEN_ID = 73;
+    int MENU_XSNVSHEN_HDTU_ID = 74;
+
 }

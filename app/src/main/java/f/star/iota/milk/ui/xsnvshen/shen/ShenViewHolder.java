@@ -1,4 +1,4 @@
-package f.star.iota.milk.ui.kuvva.va;
+package f.star.iota.milk.ui.xsnvshen.shen;
 
 
 import android.app.Activity;
@@ -22,20 +22,25 @@ import f.star.iota.milk.base.BaseViewHolder;
 import f.star.iota.milk.base.PCBean;
 import f.star.iota.milk.fresco.FrescoLoader;
 
-public class VaViewHolder extends BaseViewHolder<VaBean> {
-    @BindView(R.id.card_view)
-    CardView mCardView;
+public class ShenViewHolder extends BaseViewHolder<ShenBean> {
+
     @BindView(R.id.simple_drawee_view_image)
     SimpleDraweeView mSimpleDraweeView;
+    @BindView(R.id.card_view)
+    CardView mCardView;
 
-    public VaViewHolder(View itemView) {
+    private final int width = 300;
+    private final int height = 300;
+
+
+    public ShenViewHolder(View itemView) {
         super(itemView);
     }
 
     @Override
-    public void bindView(final List<VaBean> beans) {
-        final VaBean bean = beans.get(getAdapterPosition());
-        FrescoLoader.load(mSimpleDraweeView, bean.getUrl());
+    public void bindView(final List<ShenBean> beans) {
+        final ShenBean bean = beans.get(getAdapterPosition());
+        FrescoLoader.load(mSimpleDraweeView, bean.getUrl(),width,height);
         mCardView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -57,13 +62,14 @@ public class VaViewHolder extends BaseViewHolder<VaBean> {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 download(bean.getUrl(), bean.getUrl(),
-                                        Menus.MENU_KUVVA, null);
+                                        Menus.MENU_XSNVSHEN, null);
                             }
                         })
                         .show();
                 return true;
             }
         });
+
         mCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,10 +90,10 @@ public class VaViewHolder extends BaseViewHolder<VaBean> {
     }
 
     @Override
-    protected List<PCBean> getProcessingCompletedBeans(List<VaBean> beans) {
+    protected List<PCBean> getProcessingCompletedBeans(List<ShenBean> beans) {
         List<PCBean> imgs = new ArrayList<>();
-        for (VaBean bean : beans) {
-            imgs.add(new PCBean(bean.getUrl(), bean.getUrl(), Menus.MENU_KUVVA,
+        for (ShenBean bean : beans) {
+            imgs.add(new PCBean(bean.getUrl(), bean.getUrl(), Menus.MENU_XSNVSHEN,
                     "下载地址：" + bean.getUrl()));
         }
         return imgs;

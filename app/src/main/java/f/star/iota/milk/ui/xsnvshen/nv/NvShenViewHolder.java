@@ -1,4 +1,4 @@
-package f.star.iota.milk.ui.apic.a;
+package f.star.iota.milk.ui.xsnvshen.nv;
 
 
 import android.content.DialogInterface;
@@ -14,26 +14,25 @@ import f.star.iota.milk.R;
 import f.star.iota.milk.base.BaseActivity;
 import f.star.iota.milk.base.BaseViewHolder;
 import f.star.iota.milk.fresco.FrescoLoader;
-import f.star.iota.milk.ui.apic.pic.PicFragment;
+import f.star.iota.milk.ui.xsnvshen.shen.ShenFragment;
 
 
-public class ApicViewHolder extends BaseViewHolder<ApicBean> {
+public class NvShenViewHolder extends BaseViewHolder<NvShenBean> {
 
-    @BindView(R.id.card_view)
-    CardView mCardView;
     @BindView(R.id.simple_drawee_view_image)
     SimpleDraweeView mSimpleDraweeView;
-    @BindView(R.id.text_view_tag)
-    TextView mTextViewTag;
     @BindView(R.id.text_view_description)
     TextView mTextViewDescription;
+    @BindView(R.id.card_view)
+    CardView mCardView;
 
-    public ApicViewHolder(View itemView) {
+
+    public NvShenViewHolder(View itemView) {
         super(itemView);
     }
 
     @Override
-    public void bindView(final ApicBean bean) {
+    public void bindView(final NvShenBean bean) {
         FrescoLoader.load(mSimpleDraweeView, bean.getPreview());
         mCardView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -59,10 +58,9 @@ public class ApicViewHolder extends BaseViewHolder<ApicBean> {
         mCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((BaseActivity) mContext).addFragment(PicFragment.newInstance(bean.getUrl() + "/"));
+                    ((BaseActivity) mContext).addFragment(ShenFragment.newInstance(bean.getUrl()));
             }
         });
-        mTextViewTag.setText(bean.getDate());
         mTextViewDescription.setText(bean.getDescription());
     }
 }

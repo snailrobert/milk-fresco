@@ -12,7 +12,7 @@ public class BilibiliAdapter extends BaseAdapter<BilibiliViewHolder, BilibiliBea
 
     @Override
     public BilibiliViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new BilibiliViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_description, parent, false));
+        return new BilibiliViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_pure_image, parent, false));
     }
 
     @Override

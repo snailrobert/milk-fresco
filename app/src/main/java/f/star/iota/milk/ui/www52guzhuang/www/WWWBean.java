@@ -1,12 +1,12 @@
-package f.star.iota.milk.ui.apic.pic;
+package f.star.iota.milk.ui.www52guzhuang.www;
 
 import f.star.iota.milk.base.BaseBean;
 
 
-class PicBean extends BaseBean {
+class WWWBean extends BaseBean {
     private String url;
 
-    public PicBean() {
+    public WWWBean() {
     }
 
     public String getUrl() {

@@ -14,6 +14,7 @@ import f.star.iota.milk.ui.akabe.a.AKabeFragment;
 import f.star.iota.milk.ui.animepictures.anime.AnimePictureFragment;
 import f.star.iota.milk.ui.artstation.art.ArtStationFragment;
 import f.star.iota.milk.ui.bcy.ranking.BCYRankingPagerFragment;
+import f.star.iota.milk.ui.bilibili.BilibiliPagerFragment;
 import f.star.iota.milk.ui.booru.BooruFragment;
 import f.star.iota.milk.ui.donmai.DonmaiFragment;
 import f.star.iota.milk.ui.eshuushuu.ESHUUSHUUFragment;
@@ -94,6 +95,10 @@ public class MenuIllustrationFragment extends MenuFragment {
             //     currentFragment = new ApicPagerFragment();
             //     activity.setTitle(Menus.MENU_APIC);
             //     break;
+            case Menus.MENU_BILIBILI_ILLUST_ID:
+                currentFragment = BilibiliPagerFragment.newInstance(BilibiliPagerFragment.ILLUST);
+                activity.setTitle(Menus.MENU_BILIBILI);
+                break;
             case Menus.MENU_ZEROCHAN_ID:
                 currentFragment = ZerochanFragment.newInstance(Net.ZEROCHAN);
                 activity.setTitle(Menus.MENU_ZEROCHAN);
@@ -258,6 +263,12 @@ public class MenuIllustrationFragment extends MenuFragment {
         //         "http://img.gov.com.de/2015/04/apic-in-%E6%A3%92%E6%A3%92%E7%B3%96-3-565x800.jpg",
         //         Net.APIC_LOGIN
         // ));
+        menu.add(new MenuBean(Menus.MENU_BILIBILI_ILLUST_ID,
+                Menus.MENU_BILIBILI,
+                Net.BILIBILI_BASE,
+                "http://static.hdslb.com/drawyoo/wallpaper/images/logo.png",
+                null
+        ));
         menu.add(new MenuBean(Menus.MENU_ZEROCHAN_ID,
                 Menus.MENU_ZEROCHAN,
                 Net.ZEROCHAN_BASE,
