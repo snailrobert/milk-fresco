@@ -9,34 +9,34 @@ import f.star.iota.milk.Net;
 import f.star.iota.milk.base.BaseActivity;
 import f.star.iota.milk.base.BaseFragment;
 import f.star.iota.milk.config.OtherConfig;
+import f.star.iota.milk.ui.acg17.acg.ACG17PagerFragment;
 import f.star.iota.milk.ui.bcy.ranking.BCYRankingPagerFragment;
-import f.star.iota.milk.ui.bcy.selected.BCYSelectedFragment;
 import f.star.iota.milk.ui.chinagirlol.china.ChinaGirlOLPagerFragment;
 import f.star.iota.milk.ui.cosplayla.cosplay.CosplayLaFragment;
 import f.star.iota.milk.ui.gamersky.gamer.GamerSkyFragment;
 import f.star.iota.milk.ui.gank.GankFragment;
 import f.star.iota.milk.ui.girlatlas.girl.GirlAtlasPagerFragment;
+import f.star.iota.milk.ui.girlsky.girl.GirlSkyPagerFragment;
 import f.star.iota.milk.ui.gravuregirlz.gravure.GravureGirlZFragment;
+import f.star.iota.milk.ui.ituba.itu.ITuBaPagerFragment;
 import f.star.iota.milk.ui.jdlingyu.jd.JDLINGYUPagerFragment;
-import f.star.iota.milk.ui.lesmao.les.LesmaoFragment;
+import f.star.iota.milk.ui.kissgoddess.goddess.KissGoddessPagerFragment;
 import f.star.iota.milk.ui.magmoe.mag.MagPagerFragment;
-import f.star.iota.milk.ui.meimeizi.mei.MeiMeiZiFragment;
-import f.star.iota.milk.ui.miaowu.miao.MiaoWuPagerFragment;
-import f.star.iota.milk.ui.mmjpg.mm.MmjpgFragment;
+import f.star.iota.milk.ui.meitulu.meitu.MeiTuPagerFragment;
+import f.star.iota.milk.ui.meitumen.meitu.MeiTuMenPagerFragment;
+import f.star.iota.milk.ui.mmcools.cools.MMCOOLSFragment;
+import f.star.iota.milk.ui.mmjpg.mm.MmjpgPagerFragment;
 import f.star.iota.milk.ui.mmonly.mm.MMONLYFragment;
 import f.star.iota.milk.ui.moe005tv.moe.MOE005TVPagerFragment;
 import f.star.iota.milk.ui.mzitu.mzi.MZITUFragment;
-import f.star.iota.milk.ui.rosiyy.rosi.ROSIYYFragment;
-import f.star.iota.milk.ui.taotutt.tao.TAOTUTTFragment;
-import f.star.iota.milk.ui.tngou.TGPagerFragment;
+import f.star.iota.milk.ui.ncjlh.jlh.NcJlhPagerFragment;
+import f.star.iota.milk.ui.rosimm.rosi.ROSIMMPagerFragment;
 import f.star.iota.milk.ui.umei.u.UMEIFragment;
 import f.star.iota.milk.ui.www005tv.www.WWW005TVFragment;
-import f.star.iota.milk.ui.www192ttcom.www.WWW192TTCOMPagerFragment;
-import f.star.iota.milk.ui.www94taotucom.www.WWW94TAOTUCOMFragment;
-import f.star.iota.milk.ui.xiumm.xiu.XIUMMFragment;
+import f.star.iota.milk.ui.wwwmm131net.www.WWWMM131NETPagerFragment;
 import f.star.iota.milk.ui.xiuren.xiu.XiuRenFragment;
-import f.star.iota.milk.ui.youwu.you.YouWuPagerFragment;
-import f.star.iota.milk.ui.zdt8.zd.ZDT8Fragment;
+import f.star.iota.milk.ui.yeitu.yei.YeiTuPagerFragment;
+import f.star.iota.milk.ui.yuleba.yule.YuLeBaPagerFragment;
 
 public class MenuMeiziFragment extends MenuFragment {
     @Override
@@ -44,18 +44,17 @@ public class MenuMeiziFragment extends MenuFragment {
         BaseActivity activity = (BaseActivity) mContext;
         BaseFragment currentFragment = null;
         switch (menu.getId()) {
-            case Menus.MENU_BCY_COS_SELECTED_ID:
-                currentFragment = BCYSelectedFragment.newInstance(Net.BCY_COS_SELECTED);
-                activity.setTitle(Menus.MENU_BCY_SELECTED);
+            case Menus.MENU_ACG17_COS_ID:
+                currentFragment = ACG17PagerFragment.newInstance(ACG17PagerFragment.COS);
+                activity.setTitle(Menus.MENU_ACG17);
                 break;
-
             case Menus.MENU_BCY_COS_RANKING_ID:
                 currentFragment = BCYRankingPagerFragment.newInstance(BCYRankingPagerFragment.COS);
                 activity.setTitle(Menus.MENU_BCY_RANKING);
                 break;
 
             case Menus.MENU_MAG_MOE_COS_STAR_ID:
-                currentFragment = new MagPagerFragment();
+                currentFragment = MagPagerFragment.newInstance(MagPagerFragment.COS);
                 activity.setTitle(Menus.MENU_MAG_MOE);
                 break;
             case Menus.MENU_WWW_005_TV_COS_ID:
@@ -78,27 +77,42 @@ public class MenuMeiziFragment extends MenuFragment {
                 currentFragment = GankFragment.newInstance(Net.GANK);
                 activity.setTitle(Menus.MENU_GANK);
                 break;
-            case Menus.MENU_TNGOU_ID:
-                currentFragment = new TGPagerFragment();
-                activity.setTitle(Menus.MENU_TNGOU);
+            case Menus.MENU_MEITULU_ID:
+                currentFragment = new MeiTuPagerFragment();
+                activity.setTitle(Menus.MENU_MEITULU);
                 break;
-            case Menus.MENU_JDLINGYU_MEIZHI_ID:
-                currentFragment = new JDLINGYUPagerFragment();
+            case Menus.MENU_JDLINGYU_ALL_ID:
+                currentFragment = JDLINGYUPagerFragment.newInstance(JDLINGYUPagerFragment.ALL);
                 activity.setTitle(Menus.MENU_JDLINGYU);
                 break;
-
-            case Menus.MENU_LESMAO_ID:
-                currentFragment = LesmaoFragment.newInstance(Net.LESMAO);
-                activity.setTitle(Menus.MENU_LESMAO);
+            case Menus.MENU_JDLINGYU_COS_ID:
+                currentFragment = JDLINGYUPagerFragment.newInstance(JDLINGYUPagerFragment.COS);
+                activity.setTitle(Menus.MENU_JDLINGYU);
                 break;
-            case Menus.MENU_XIUMM_ID:
-                currentFragment = XIUMMFragment.newInstance(Net.XIUMM);
-                activity.setTitle(Menus.MENU_XIUMM);
+            case Menus.MENU_JDLINGYU_HENTAI_MZITU_ID:
+                currentFragment = JDLINGYUPagerFragment.newInstance(JDLINGYUPagerFragment.HENTAI_MZITU);
+                activity.setTitle(Menus.MENU_JDLINGYU);
                 break;
-            case Menus.MENU_94TAOTU_ID:
-                currentFragment = WWW94TAOTUCOMFragment.newInstance(Net.WWW94TAOTUCOM);
-                activity.setTitle(Menus.MENU_94TAOTU);
+            case Menus.MENU_JDLINGYU_SIFANG_ZIPAI_ID:
+                currentFragment = JDLINGYUPagerFragment.newInstance(JDLINGYUPagerFragment.SIFANG_ZIPAI);
+                activity.setTitle(Menus.MENU_JDLINGYU);
                 break;
+            case Menus.MENU_JDLINGYU_GCTT_RBXZ_ID:
+                currentFragment = JDLINGYUPagerFragment.newInstance(JDLINGYUPagerFragment.GCTT_RBXZ);
+                activity.setTitle(Menus.MENU_JDLINGYU);
+                break;
+            case Menus.MENU_MEITUMEN_MENU_ID:
+                currentFragment = MeiTuMenPagerFragment.newInstance(MeiTuMenPagerFragment.MENU);
+                activity.setTitle(Menus.MENU_MEITUMEN);
+                break;
+            case Menus.MENU_MEITUMEN_TAG_ID:
+                currentFragment = MeiTuMenPagerFragment.newInstance(MeiTuMenPagerFragment.TAG);
+                activity.setTitle(Menus.MENU_MEITUMEN);
+                break;
+            // case Menus.MENU_94TAOTU_ID:
+            //     currentFragment = WWW94TAOTUCOMFragment.newInstance(Net.WWW94TAOTUCOM);
+            //     activity.setTitle(Menus.MENU_94TAOTU);
+            //     break;
             case Menus.MENU_MZITU_ID:
                 currentFragment = MZITUFragment.newInstance(Net.MZITU);
                 activity.setTitle(Menus.MENU_MZITU);
@@ -107,13 +121,13 @@ public class MenuMeiziFragment extends MenuFragment {
                 currentFragment = MMONLYFragment.newInstance(Net.MMONLY);
                 activity.setTitle(Menus.MENU_MMONLY);
                 break;
-            case Menus.MENU_ROSIYY_ID:
-                currentFragment = ROSIYYFragment.newInstance(Net.ROSIYY);
-                activity.setTitle(Menus.MENU_ROSIYY);
+            case Menus.MENU_ROSIMM_ID:
+                currentFragment = new ROSIMMPagerFragment();
+                activity.setTitle(Menus.MENU_ROSIMM);
                 break;
-            case Menus.MENU_192TT_ID:
-                currentFragment = new WWW192TTCOMPagerFragment();
-                activity.setTitle(Menus.MENU_192TT);
+            case Menus.MENU_MM131_ID:
+                currentFragment = new WWWMM131NETPagerFragment();
+                activity.setTitle(Menus.MENU_MM131);
                 break;
             case Menus.MENU_XIUREN_ID:
                 currentFragment = XiuRenFragment.newInstance(Net.XIUREN);
@@ -123,21 +137,21 @@ public class MenuMeiziFragment extends MenuFragment {
                 currentFragment = new ChinaGirlOLPagerFragment();
                 activity.setTitle(Menus.MENU_CHINAGIRLOL);
                 break;
-            case Menus.MENU_MIAOWU_ID:
-                currentFragment = new MiaoWuPagerFragment();
-                activity.setTitle(Menus.MENU_MIAOWU);
+            case Menus.MENU_GIRLSKY_ID:
+                currentFragment = new GirlSkyPagerFragment();
+                activity.setTitle(Menus.MENU_GIRLSKY);
                 break;
-            case Menus.MENU_MEIMEIZI_ID:
-                currentFragment = MeiMeiZiFragment.newInstance(Net.MEIMEIZI);
-                activity.setTitle(Menus.MENU_MEIMEIZI);
+            case Menus.MENU_MMCOOLS_ID:
+                currentFragment = MMCOOLSFragment.newInstance(Net.MMCOOLS_GOOD);
+                activity.setTitle(Menus.MENU_MMCOOLS);
                 break;
-            case Menus.MENU_YOUWU_ID:
-                currentFragment = new YouWuPagerFragment();
-                activity.setTitle(Menus.MENU_YOUWU);
+            case Menus.MENU_YEITU_ID:
+                currentFragment = new YeiTuPagerFragment();
+                activity.setTitle(Menus.MENU_YEITU);
                 break;
-            case Menus.MENU_TAOTUTT_ID:
-                currentFragment = TAOTUTTFragment.newInstance(Net.TAOTUTT);
-                activity.setTitle(Menus.MENU_TAOTUTT);
+            case Menus.MENU_GODDESS_ID:
+                currentFragment = new KissGoddessPagerFragment();
+                activity.setTitle(Menus.MENU_GODDESS);
                 break;
             case Menus.MENU_UMEI_ID:
                 currentFragment = UMEIFragment.newInstance(Net.UMEI);
@@ -148,16 +162,24 @@ public class MenuMeiziFragment extends MenuFragment {
                 activity.setTitle(Menus.MENU_GRAVUREGIRLZ);
                 break;
             case Menus.MENU_MMJPG_ID:
-                currentFragment = MmjpgFragment.newInstance(Net.MMJPG);
+                currentFragment = new MmjpgPagerFragment();
                 activity.setTitle(Menus.MENU_MMJPG);
                 break;
             case Menus.MENU_GIRL_ATLAS_ID:
                 currentFragment = new GirlAtlasPagerFragment();
                 activity.setTitle(Menus.MENU_GIRL_ATLAS);
                 break;
-            case Menus.MENU_ZDT8_ID:
-                currentFragment = ZDT8Fragment.newInstance(Net.ZDT8);
-                activity.setTitle(Menus.MENU_ZDT8);
+            case Menus.MENU_ITUBA_ID:
+                currentFragment = new ITuBaPagerFragment();
+                activity.setTitle(Menus.MENU_ITUBA);
+                break;
+            case Menus.MENU_YULEBA_ID:
+                currentFragment = new YuLeBaPagerFragment();
+                activity.setTitle(Menus.MENU_YULEBA);
+                break;
+            case Menus.MENU_NCJLH_ID:
+                currentFragment = new NcJlhPagerFragment();
+                activity.setTitle(Menus.MENU_NCJLH);
                 break;
         }
         activity.removeFragmentContainerChildrenViews();
@@ -173,8 +195,8 @@ public class MenuMeiziFragment extends MenuFragment {
                 Net.WWW_005_TV_BASE, "http://www.005.tv/templets/muban/style/images/bannerbg.jpg", null));
         menu.add(new MenuBean(Menus.MENU_COSPLAY_LA_ID, Menus.MENU_COSPLAY_LA,
                 Net.COSPLAY_LA_BASE, "http://cosplay.la/content/images/logo.png", null));
-        menu.add(new MenuBean(Menus.MENU_BCY_COS_SELECTED_ID, Menus.MENU_BCY_SELECTED,
-                Net.BCY_BASE, "https://pubin.bcyimg.com/Image/sub-nav/logo-home-9e8a0985d6.png", null));
+        menu.add(new MenuBean(Menus.MENU_ACG17_COS_ID, Menus.MENU_ACG17,
+                Net.ACG17_BASE, "https://i.loli.net/2018/10/02/5bb31fba269b8.png", null));
         menu.add(new MenuBean(Menus.MENU_BCY_COS_RANKING_ID, Menus.MENU_BCY_RANKING,
                 Net.BCY_BASE, "https://pubin.bcyimg.com/Image/sub-nav/logo-home-9e8a0985d6.png", null));
         menu.add(new MenuBean(Menus.MENU_MOE005TV_COS_ID, Menus.MENU_MOE005TV,
@@ -183,42 +205,55 @@ public class MenuMeiziFragment extends MenuFragment {
                 Net.GAMERSKY_BASE, "http://image.gamersky.com/webimg13/acg/new/logo.png", null));
         menu.add(new MenuBean(Menus.MENU_GANK_ID, Menus.MENU_GANK,
                 Net.GANK_BASE, "https://ws1.sinaimg.cn/large/610dc034ly1fiiiyfcjdoj20u00u0ju0.jpg", null));
-        menu.add(new MenuBean(Menus.MENU_TNGOU_ID, Menus.MENU_TNGOU,
-                Net.TNGOU_BASE, "https://ws1.sinaimg.cn/large/610dc034ly1fiednrydq8j20u011itfz.jpg", null));
-        menu.add(new MenuBean(Menus.MENU_JDLINGYU_MEIZHI_ID, Menus.MENU_JDLINGYU,
-                Net.JDLINGYU_BASE, "http://www.jdlingyu.moe/wp-content/uploads/2017/01/2017-01-07_20-57-14.png", null));
-        menu.add(new MenuBean(Menus.MENU_LESMAO_ID, Menus.MENU_LESMAO,
-                Net.LESMAO_BASE, "http://www.lesmao.com/static/image/common/logo.png", null));
-        menu.add(new MenuBean(Menus.MENU_XIUMM_ID, Menus.MENU_XIUMM,
-                Net.XIUMM_BASE, "http://www.xiumm8.com/data/t/0188/86/15039196529439_album.jpg", null));
-        menu.add(new MenuBean(Menus.MENU_94TAOTU_ID, Menus.MENU_94TAOTU,
-                Net.WWW94TAOTUCOM_BASE, "http://img.94taotu.com/data/t/0155/07/1503666691557_album.jpg", null));
+        menu.add(new MenuBean(Menus.MENU_MEITULU_ID, Menus.MENU_MEITULU,
+                Net.MEITULU_BASE, "https://mtl.ttsqgs.com/css/logo.jpg", null));
+        menu.add(new MenuBean(Menus.MENU_JDLINGYU_ALL_ID, Menus.MENU_JDLINGYU,
+                Net.JDLINGYU_BASE, "http://www.jdlingyu.mobi/wp-content/uploads/2017/01/2017-01-07_20-57-14.png", null));
+        menu.add(new MenuBean(Menus.MENU_JDLINGYU_COS_ID, Menus.MENU_JDLINGYU,
+                Net.JDLINGYU_BASE, "http://www.jdlingyu.mobi/wp-content/uploads/2017/01/2017-01-07_20-57-14.png", null));
+        menu.add(new MenuBean(Menus.MENU_JDLINGYU_HENTAI_MZITU_ID, Menus.MENU_JDLINGYU,
+                Net.JDLINGYU_BASE, "http://www.jdlingyu.mobi/wp-content/uploads/2017/01/2017-01-07_20-57-14.png", null));
+        menu.add(new MenuBean(Menus.MENU_JDLINGYU_SIFANG_ZIPAI_ID, Menus.MENU_JDLINGYU,
+                Net.JDLINGYU_BASE, "http://www.jdlingyu.mobi/wp-content/uploads/2017/01/2017-01-07_20-57-14.png", null));
+        menu.add(new MenuBean(Menus.MENU_JDLINGYU_GCTT_RBXZ_ID, Menus.MENU_JDLINGYU,
+                Net.JDLINGYU_BASE, "http://www.jdlingyu.mobi/wp-content/uploads/2017/01/2017-01-07_20-57-14.png", null));
+        menu.add(new MenuBean(Menus.MENU_MEITUMEN_MENU_ID, Menus.MENU_MEITUMEN,
+                Net.MEITUMEN_BASE, "https://f.meitumen.com/wp-content/uploads/2019/07/71a19774130be40.png", null));
+        menu.add(new MenuBean(Menus.MENU_MEITUMEN_TAG_ID, Menus.MENU_MEITUMEN,
+                Net.MEITUMEN_BASE, "https://f.meitumen.com/wp-content/uploads/2019/07/71a19774130be40.png", null));
+        // menu.add(new MenuBean(Menus.MENU_94TAOTU_ID, Menus.MENU_94TAOTU,
+        //         Net.WWW94TAOTUCOM_BASE, "http://img.94taotu.com/data/t/0155/07/1503666691557_album.jpg", null));
+
         menu.add(new MenuBean(Menus.MENU_MZITU_ID, Menus.MENU_MZITU,
                 Net.MZITU_BASE, "https://ws1.sinaimg.cn/large/610dc034gy1fi678xgq1ij20pa0vlgo4.jpg", null));
         menu.add(new MenuBean(Menus.MENU_MMONLY_ID, Menus.MENU_MMONLY,
                 Net.MMONLY_BASE, "http://www.mmonly.cc/skins/images/mmonly1.png", null));
-        menu.add(new MenuBean(Menus.MENU_ROSIYY_ID, Menus.MENU_ROSIYY,
-                Net.ROSIYY_BASE, "http://www.rosiyy.com/usr/themes/mm/images/logo.png", null));
-        menu.add(new MenuBean(Menus.MENU_192TT_ID, Menus.MENU_192TT,
-                Net.WWW192TTCOM_BASE, "http://www.192tt.com/style/logo/logo.png", null));
+        menu.add(new MenuBean(Menus.MENU_ROSIMM_ID, Menus.MENU_ROSIMM,
+                Net.ROSIMM_BASE, "http://www.rosi6.cc/tob/logo.png", null));
+        menu.add(new MenuBean(Menus.MENU_MM131_ID, Menus.MENU_MM131,
+                Net.WWWMM131NET_BASE, "https://img.yeitu.com/2017/0701/20170701045011585.jpg", null));
         menu.add(new MenuBean(Menus.MENU_CHINAGIRLOL_ID, Menus.MENU_CHINAGIRLOL,
                 Net.CHINAGIRLOL_BASE, "http://www.chinagirlol.cc/template/bbf_cg/src/logo.png", null));
-        menu.add(new MenuBean(Menus.MENU_MIAOWU_ID, Menus.MENU_MIAOWU,
-                Net.MIAOWU_BASE, "http://www.miaowu.cc/picture/logo-3-1.png", null));
-        menu.add(new MenuBean(Menus.MENU_MEIMEIZI_ID, Menus.MENU_MZITU,
-                Net.MEIMEIZI + 1, "http://www.meimeizi.com/wp-content/themes/Loostrive/images/logo.png", null));
-        menu.add(new MenuBean(Menus.MENU_YOUWU_ID, Menus.MENU_YOUWU,
-                Net.YOUWU_BASE, "https://ws1.sinaimg.cn/large/610dc034ly1fitcjyruajj20u011h412.jpg", null));
-        menu.add(new MenuBean(Menus.MENU_TAOTUTT_ID, Menus.MENU_TAOTUTT,
-                Net.TAOTUTT_BASE, "http://taotutt.com/wp-content/themes/cx-udy/images/logo.png", null));
+        menu.add(new MenuBean(Menus.MENU_GIRLSKY_ID, Menus.MENU_GIRLSKY,
+                Net.GIRLSKY_BASE, "http://www.girlsky.cn/statics/v1/images/logo4.png", null));
+        menu.add(new MenuBean(Menus.MENU_MMCOOLS_ID, Menus.MENU_MMCOOLS,
+                Net.MMCOOLS_BASE, "https://ws1.sinaimg.cn/large/610dc034ly1fitcjyruajj20u011h412.jpg", null));
+        menu.add(new MenuBean(Menus.MENU_YEITU_ID, Menus.MENU_YEITU,
+                Net.YEITU_BASE, "https://www.yeitu.com/statics/images/yeitu/logo.png", null));
+        menu.add(new MenuBean(Menus.MENU_GIRL_ATLAS_ID, Menus.MENU_GIRL_ATLAS,
+                Net.GIRL_ATLAS_BASE, "http://static.meinvjpg.com/static/img/logo@2x.png", null));
         menu.add(new MenuBean(Menus.MENU_UMEI_ID, Menus.MENU_UMEI,
                 Net.UMEI, "http://www.umei.cc/images/logo4.png", null));
         menu.add(new MenuBean(Menus.MENU_MMJPG_ID, Menus.MENU_MMJPG,
                 Net.MMJPG_BASE, "http://img.mmjpg.com/2015/295/1.jpg", null));
-        menu.add(new MenuBean(Menus.MENU_GIRL_ATLAS_ID, Menus.MENU_GIRL_ATLAS,
-                Net.GIRL_ATLAS_BASE, "https://girlatlasfile.b0.upaiyun.com/static/img/logo@2x.png", null));
-        menu.add(new MenuBean(Menus.MENU_ZDT8_ID, Menus.MENU_ZDT8,
-                Net.ZDT8_BASE, "http://www.zdt8.com/style/logo/logo.png", null));
+        menu.add(new MenuBean(Menus.MENU_ITUBA_ID, Menus.MENU_ITUBA,
+                Net.ITUBA_BASE, "http://www.zdt8.com/style/logo/logo.png", null));
+        menu.add(new MenuBean(Menus.MENU_YULEBA_ID, Menus.MENU_YULEBA,
+                Net.YULEBA_BASE, "http://www.zdt8.com/style/logo/logo.png", null));
+        menu.add(new MenuBean(Menus.MENU_NCJLH_ID, Menus.MENU_NCJLH,
+                Net.NCJLH_BASE, "http://www.ncjlh.com/templets/default/images/logo.png", null));
+        menu.add(new MenuBean(Menus.MENU_GODDESS_ID, Menus.MENU_GODDESS,
+                Net.GODDESS_BASE, "https://tw.kissgoddess.com/images/Goddness_logo-300x111.png", null));
         if (!OtherConfig.getR(aContext)) {
             menu.add(new MenuBean(Menus.MENU_XIUREN_ID, Menus.MENU_XIUREN,
                     Net.XIUREN_BASE, "http://www.xiuren.org/logo.png", null));

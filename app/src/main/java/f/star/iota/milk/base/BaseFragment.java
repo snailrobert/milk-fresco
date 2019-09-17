@@ -41,6 +41,7 @@ public abstract class BaseFragment extends Fragment {
         EventBus.getDefault().register(this);
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         if (mContainerView == null) {

@@ -68,7 +68,7 @@ public class BCYRankingViewHolder extends BaseViewHolder<BCYRankingBean> {
         mCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((BaseActivity) mContext).addFragment(IngFragment.newInstance(bean.getUrl()));
+                ((BaseActivity) mContext).addFragment(IngFragment.newInstance(bean.getImgs()));
             }
         });
         mTextViewAuthor.setText(bean.getAuthor());

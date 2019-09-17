@@ -11,7 +11,7 @@ public class JpgFragment extends ScrollImageFragment<JpgPresenter, JpgAdapter> {
     public static JpgFragment newInstance(String url) {
         JpgFragment fragment = new JpgFragment();
         Bundle bundle = new Bundle();
-        bundle.putString("base_url", url);
+        bundle.putString("base_url", url + "?page=");
         fragment.setArguments(bundle);
         return fragment;
     }

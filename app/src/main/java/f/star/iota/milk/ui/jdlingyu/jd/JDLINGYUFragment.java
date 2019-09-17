@@ -3,10 +3,10 @@ package f.star.iota.milk.ui.jdlingyu.jd;
 
 import android.os.Bundle;
 
-import f.star.iota.milk.base.ScrollImageFragment;
+import f.star.iota.milk.base.MoreScrollImageFragment;
 
 
-public class JDLINGYUFragment extends ScrollImageFragment<JDLINGYUPresenter, JDLINGYUAdapter> {
+public class JDLINGYUFragment extends MoreScrollImageFragment<JDLINGYUPresenter, JDLINGYUAdapter> {
 
 
     public static JDLINGYUFragment newInstance(String url) {
@@ -27,4 +27,5 @@ public class JDLINGYUFragment extends ScrollImageFragment<JDLINGYUPresenter, JDL
     protected JDLINGYUAdapter getAdapter() {
         return new JDLINGYUAdapter();
     }
+
 }

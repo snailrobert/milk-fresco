@@ -13,6 +13,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.widget.RemoteViews;
 
 import com.facebook.common.executors.UiThreadImmediateExecutorService;
@@ -84,7 +85,9 @@ public class BannerService extends Service implements BannerContract.View {
         registerReceiver(mRefreshReceiver = new RefreshReceiver(), filter);
         mBannerPresenter = new BannerPresenter(this);
         mTimer = new Timer();
-        mTimer.scheduleAtFixedRate(mTask, 0, 1000 * 60 * WidgetConfig.getJuziInterval(mContext));
+        //mTimer.scheduleAtFixedRate(mTask, 0, 1000 * 60 * WidgetConfig.getJuziInterval(mContext));
+        mTimer.scheduleAtFixedRate(mTask, 0, 60 * WidgetConfig.getJuziInterval(mContext));
+        Log.d("BannerService","oncreate-----ccccccc");
     }
 
     @Override

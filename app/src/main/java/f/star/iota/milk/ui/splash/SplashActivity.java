@@ -100,6 +100,7 @@ public class SplashActivity extends BaseActivity implements SplashContract.View 
         finish();
     }
 
+    //是否全屏模式
     @Override
     protected boolean isFullScreen() {
         return true;
@@ -109,6 +110,7 @@ public class SplashActivity extends BaseActivity implements SplashContract.View 
     protected void init() {
         isFinished = false;
         mPresenter = new SplashPresenter(this);
+        //从应用设置中背景源
         mPresenter.getImage(SplashConfig.getSplashSource(mContext));
         TypedValue typedValue = new TypedValue();
         mContext.getTheme().resolveAttribute(R.attr.colorAccent, typedValue, true);

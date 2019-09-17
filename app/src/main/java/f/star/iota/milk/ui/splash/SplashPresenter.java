@@ -540,7 +540,7 @@ public class SplashPresenter implements SplashContract.Presenter {
                             @Override
                             public String apply(@NonNull Response<String> s) throws Exception {
                                 List<String> list = new ArrayList<>();
-                                Elements select = Jsoup.parse(s.body()).select("#main-2 > div.post > div.more-field > a");
+                                Elements select = Jsoup.parse(s.body()).select("#main-2 > div.post > div.box.list > a");
                                 for (Element element : select) {
                                     String url = element.attr("href");
                                     list.add(url);
@@ -570,6 +570,7 @@ public class SplashPresenter implements SplashContract.Presenter {
     }
 
     private void getMoeImgRaw(String url) {
+
         mCompositeDisposable.add(
                 OkGo.<String>get(url)
                         .converter(new StringConvert())

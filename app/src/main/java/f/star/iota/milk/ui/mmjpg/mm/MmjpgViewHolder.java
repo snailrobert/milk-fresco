@@ -37,9 +37,9 @@ public class MmjpgViewHolder extends BaseViewHolder<MmjpgBean> {
     @Override
     public void bindView(final MmjpgBean bean) {
         HashMap<String, String> headers = bean.getHeaders();
-        headers.put("Accept", "image/webp,image/*,*/*;q=0.8");
-        headers.put("Referer", "http://www.mmjpg.com/");
-        headers.put("Host", "img.mmjpg.com");
+        // headers.put("Accept", "image/webp,image/*,*/*;q=0.8");
+        // headers.put("Referer", "http://www.mmjpg.com/");
+        // headers.put("Host", "img.mmjpg.com");
         FrescoLoader.load(mSimpleDraweeView, bean.getPreview(), headers);
         mCardView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override

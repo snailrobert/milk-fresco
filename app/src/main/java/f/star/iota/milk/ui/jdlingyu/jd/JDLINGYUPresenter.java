@@ -29,20 +29,25 @@ public class JDLINGYUPresenter extends StringPresenter<List<JDLINGYUBean>> {
     @Override
     protected List<JDLINGYUBean> dealResponse(String s, HashMap<String, String> headers) {
         List<JDLINGYUBean> list = new ArrayList<>();
-        Elements select = Jsoup.parse(s).select("#postlist > div.pin");
+        Elements select = Jsoup.parse(s).select("#main > div.grid-bor > div");
+        // Elements select = Jsoup.parse(s).select("#postlist > div.pin");
         for (Element element : select) {
             JDLINGYUBean bean = new JDLINGYUBean();
-            String preview = element.select("div.pin-coat > a > img").attr("original");
-            if (preview == null || preview.length() < 5) {
-                preview = element.select("div.pin-coat > a > img").attr("src");
-            }
+            String preview = element.select("div.pos-r.cart-list > div.thumb.pos-r > div.preview.thumb-in").attr("style");
+            // String preview = element.select("div.pin-coat > a > img").attr("original");
+            // if (preview == null || preview.length() < 5) {
+            //     preview = element.select("div.pin-coat > a > img").attr("src");
+            // }
+            preview = preview.substring(preview.indexOf("(")+2,preview.indexOf(")")-1);
             bean.setPreview(preview);
-            String description = element.select("div.pin-coat > a > img").attr("alt");
+            String description = element.select("div.pos-r.cart-list > div.post-info > h2.entry-title > a").text();
+            // String description = element.select("div.pin-coat > a > img").attr("alt");
             bean.setDescription(description);
-            String url = element.select("div.pin-coat > a").attr("href");
+            String url = element.select("div.pos-r.cart-list > div.post-info > h2.entry-title > a").attr("href");
+            // String url = element.select("div.pin-coat > a").attr("href");
             bean.setUrl(url);
             bean.setHeaders(headers);
-            String date = element.select("div.pin-coat > div.pin-data > span.timer > span").text();
+            String date = element.select("div.pos-r.cart-list > div.post-info > div.post-header > span.gray > time").attr("data-timeago");
             bean.setDate(date);
             list.add(bean);
         }

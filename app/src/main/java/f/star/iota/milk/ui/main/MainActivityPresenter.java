@@ -7,6 +7,9 @@ import com.lzy.okgo.convert.StringConvert;
 import com.lzy.okgo.model.Response;
 import com.lzy.okrx2.adapter.ObservableResponse;
 
+import java.util.List;
+import java.util.Map;
+
 import f.star.iota.milk.Net;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
@@ -29,6 +32,7 @@ public class MainActivityPresenter implements MainActivityContract.Presenter {
     @Override
     public void get() {
         int random = (int) (Math.random() * 4);
+        random=1;
         if (random == 0) {
             mCompositeDisposable.add(
                     OkGo.<String>get(Net.HITOKOTO_BILIBILIJJ)
@@ -39,12 +43,17 @@ public class MainActivityPresenter implements MainActivityContract.Presenter {
                                 @Override
                                 public JuZiBean apply(@NonNull Response<String> response) throws Exception {
                                     String s = response.body();
-                                    s = s.substring(s.indexOf("(", 0) + 1, s.lastIndexOf(")"));
-                                    JuZiBean bean = new Gson().fromJson(s, JuZiBean.class);
-                                    if (bean == null) {
+                                    // s = s.substring(s.indexOf("(", 0) + 1, s.lastIndexOf(")"));
+                                    Map map = new Gson().fromJson(s,Map.class);
+                                    JuZiBean bean = null;
+                                    if (map == null) {
                                         bean = new JuZiBean();
                                         bean.setHitokoto("解析错误，可能出现未知问题");
                                         bean.setSource("...");
+                                    } else {
+                                        bean = new JuZiBean();
+                                        bean.setHitokoto((String) ((Map)((List)map.get("res")).get(0)).get("hitokoto"));
+                                        bean.setSource((String) ((Map)((List)map.get("res")).get(0)).get("source"));
                                     }
                                     return bean;
                                 }

@@ -2,7 +2,6 @@ package f.star.iota.milk.base;
 
 
 import com.lzy.okgo.OkGo;
-import com.lzy.okgo.convert.StringConvert;
 import com.lzy.okgo.model.Response;
 import com.lzy.okgo.request.GetRequest;
 import com.lzy.okrx2.adapter.ObservableResponse;
@@ -41,9 +40,10 @@ public abstract class StringPresenter<T> implements PVContract.Presenter {
         final String finalUrl = url;
         GetRequest<String> stringGetRequest = OkGo.<String>get(url);
         addHeaders(stringGetRequest);
+        final String referer = stringGetRequest.getHeaders().get("Referer");
         mCompositeDisposable.add(
                 stringGetRequest
-                        .converter(new StringConvert())
+                        .converter(new MyStringConverter(charset()))
                         .adapt(new ObservableResponse<String>())
                         .subscribeOn(Schedulers.io()).observeOn(Schedulers.computation())
                         .map(new Function<Response<String>, T>() {
@@ -71,6 +71,9 @@ public abstract class StringPresenter<T> implements PVContract.Presenter {
                                         }
                                     }
                                 }
+                                if (referer != null || referer != ""){
+                                    headers.put("Referer", finalUrl);
+                                }
                                 return dealResponse(s.body(), headers);
                             }
                         })
@@ -95,6 +98,10 @@ public abstract class StringPresenter<T> implements PVContract.Presenter {
 
     protected String dealUrl(String url) {
         return url;
+    }
+
+    protected String charset() {
+        return null;
     }
 
     protected abstract T dealResponse(String s, HashMap<String, String> headers);

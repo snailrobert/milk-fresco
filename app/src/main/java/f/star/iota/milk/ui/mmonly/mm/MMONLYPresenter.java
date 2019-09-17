@@ -35,4 +35,9 @@ public class MMONLYPresenter extends StringPresenter<List<MMONLYBean>> {
         }
         return list;
     }
+
+    @Override
+    protected String charset() {
+        return "gb2312";
+    }
 }

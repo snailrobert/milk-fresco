@@ -3,6 +3,9 @@ package f.star.iota.milk.ui.bcy.ranking;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import f.star.iota.milk.base.BaseBean;
 
 
@@ -24,6 +27,7 @@ public class BCYRankingBean extends BaseBean implements Parcelable {
     private String rank;
     private String preview;
     private String url;
+    private List<String> imgs;
 
     public BCYRankingBean() {
     }
@@ -35,6 +39,8 @@ public class BCYRankingBean extends BaseBean implements Parcelable {
         rank = in.readString();
         preview = in.readString();
         url = in.readString();
+        imgs=new ArrayList<>();
+        in.readStringList(imgs);
     }
 
     @Override
@@ -44,7 +50,7 @@ public class BCYRankingBean extends BaseBean implements Parcelable {
         dest.writeString(avatar);
         dest.writeString(rank);
         dest.writeString(preview);
-        dest.writeString(url);
+        dest.writeStringList(imgs);
     }
 
     @Override
@@ -98,5 +104,13 @@ public class BCYRankingBean extends BaseBean implements Parcelable {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public List<String> getImgs() {
+        return imgs;
+    }
+
+    public void setImgs(List<String> imgs) {
+        this.imgs = imgs;
     }
 }

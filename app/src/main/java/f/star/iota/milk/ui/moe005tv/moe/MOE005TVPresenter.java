@@ -24,7 +24,7 @@ public class MOE005TVPresenter extends StringPresenter<List<MOE005TVBean>> {
         Elements select = Jsoup.parse(s).select("body > div.nav_warp > div.nav_w_left > div.zhuti_w_list > ul > li");
         for (Element element : select) {
             MOE005TVBean bean = new MOE005TVBean();
-            String preview = element.select("span.zt_pic > a > img").attr("src");
+            String preview = element.select("span.zt_pic > img").attr("src");
             bean.setPreview(preview);
             String url = element.select("span.zt_dep > strong > a").attr("href");
             bean.setUrl(url);

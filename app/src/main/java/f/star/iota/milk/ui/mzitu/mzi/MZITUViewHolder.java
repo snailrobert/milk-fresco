@@ -38,7 +38,7 @@ public class MZITUViewHolder extends BaseViewHolder<MZITUBean> {
     public void bindView(final MZITUBean bean) {
         HashMap<String, String> headers = bean.getHeaders();
         headers.put("Referer", "http://www.mzitu.com/");
-        headers.put("Host", "i.meizitu.net");
+        headers.put("Host", "i5.meizitu.net");
         FrescoLoader.load(mSimpleDraweeView, bean.getPreview(), headers);
         mCardView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override

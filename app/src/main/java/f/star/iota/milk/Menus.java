@@ -51,15 +51,15 @@ public interface Menus {
     String MENU_BING = "BING";
     int MENU_BING_ID = 12;
 
-    String MENU_TNGOU = "TNGOU";
-    int MENU_TNGOU_ID = 13;
+    String MENU_MEITULU = "MEITULU";
+    int MENU_MEITULU_ID = 13;
 
     String MENU_GACHA = "GACHA";
     int MENU_GACHA_ID = 14;
 
-    String MENU_BCY_SELECTED = "BCY SELECTED";
-    int MENU_BCY_ILLUST_SELECTED_ID = 15;
-    int MENU_BCY_COS_SELECTED_ID = 16;
+    String MENU_ACG17 = "ACG17";
+    int MENU_ACG17_ILLUST_ID = 15;
+    int MENU_ACG17_COS_ID = 16;
 
     String MENU_BCY = "BCY";
     String MENU_BCY_RANKING = "BCY RANKING";
@@ -88,21 +88,25 @@ public interface Menus {
     int MENU_MINITOKYO_ID = 26;
 
     String MENU_WWW_005_TV = "WWW.005.TV";
-    int MENU_WWW_005_TV_ACG_ID = 27;
+    // int MENU_WWW_005_TV_ACG_ID = 27;
     int MENU_WWW_005_TV_COS_ID = 28;
 
     String MENU_JDLINGYU = "JDLINGYU";
     int MENU_JDLINGYU_ACG_ID = 30;
-    int MENU_JDLINGYU_MEIZHI_ID = 31;
 
-    String MENU_LESMAO = "LESMAO";
-    int MENU_LESMAO_ID = 32;
+    int MENU_JDLINGYU_ALL_ID = 131;
+    int MENU_JDLINGYU_COS_ID = 231;
+    int MENU_JDLINGYU_HENTAI_MZITU_ID = 331;
+    int MENU_JDLINGYU_SIFANG_ZIPAI_ID = 431;
+    int MENU_JDLINGYU_GCTT_RBXZ_ID = 531;
 
-    String MENU_XIUMM = "XIUMM";
-    int MENU_XIUMM_ID = 33;
 
-    String MENU_94TAOTU = "94TAOTU";
-    int MENU_94TAOTU_ID = 34;
+    String MENU_MEITUMEN = "MEITUMEN";
+    int MENU_MEITUMEN_MENU_ID = 32;
+    int MENU_MEITUMEN_TAG_ID = 33;
+
+    // String MENU_94TAOTU = "94TAOTU";
+    // int MENU_94TAOTU_ID = 34;
 
     String MENU_MZITU = "MZITU";
     int MENU_MZITU_ID = 35;
@@ -110,11 +114,11 @@ public interface Menus {
     String MENU_MMONLY = "MMONLY";
     int MENU_MMONLY_ID = 36;
 
-    String MENU_ROSIYY = "ROSIYY";
-    int MENU_ROSIYY_ID = 37;
+    String MENU_ROSIMM = "ROSIMM";
+    int MENU_ROSIMM_ID = 37;
 
-    String MENU_192TT = "192TT";
-    int MENU_192TT_ID = 38;
+    String MENU_MM131 = "MM131";
+    int MENU_MM131_ID = 38;
 
     String MENU_XIUREN = "XIUREN";
     int MENU_XIUREN_ID = 39;
@@ -148,17 +152,17 @@ public interface Menus {
     String MENU_YURIIMG = "YURIIMG";
     int MENU_YURIIMG_ID = 50;
 
-    String MENU_MIAOWU = "MIAOWU";
-    int MENU_MIAOWU_ID = 51;
+    String MENU_GIRLSKY = "GIRLSKY";
+    int MENU_GIRLSKY_ID = 51;
 
-    String MENU_MEIMEIZI = "MEIMEIZI";
-    int MENU_MEIMEIZI_ID = 52;
+    String MENU_MMCOOLS = "MMCOOLS";
+    int MENU_MMCOOLS_ID = 52;
 
-    String MENU_YOUWU = "YOUWU";
-    int MENU_YOUWU_ID = 53;
+    String MENU_YEITU = "YEITU";
+    int MENU_YEITU_ID = 53;
 
-    String MENU_TAOTUTT = "TAOTUTT";
-    int MENU_TAOTUTT_ID = 54;
+    String MENU_GODDESS = "GODDESS";
+    int MENU_GODDESS_ID = 54;
 
     String MENU_UMEI = "UMEI";
     int MENU_UMEI_ID = 55;
@@ -199,9 +203,15 @@ public interface Menus {
     String MENU_GIRL_ATLAS = "GIRL-ATLAS";
     int MENU_GIRL_ATLAS_ID = 67;
 
-    String MENU_ZDT8 = "ZDT8";
-    int MENU_ZDT8_ID = 68;
+    String MENU_ITUBA = "ITUBA";
+    int MENU_ITUBA_ID = 68;
+
+    String MENU_YULEBA = "YULEBA";
+    int MENU_YULEBA_ID = 69;
 
     String MENU_A_KABE = "A-KABE";
-    int MENU_A_KABE_ID = 69;
+    int MENU_A_KABE_ID = 70;
+
+    String MENU_NCJLH = "NCJLH";
+    int MENU_NCJLH_ID = 71;
 }

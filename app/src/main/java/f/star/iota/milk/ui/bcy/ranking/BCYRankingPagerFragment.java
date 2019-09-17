@@ -30,19 +30,16 @@ public class BCYRankingPagerFragment extends PagerFragment {
         List<String> titles = new ArrayList<>();
         titles.add("本周");
         titles.add("今日");
-        titles.add("原创");
         titles.add("新人");
         List<Fragment> fragments = new ArrayList<>();
         int type = getArguments().getInt("type");
         if (type == ILLUST) {
             fragments.add(BCYRankingFragment.newInstance(Net.BCY_ILLUST_RANK_WEEK));
             fragments.add(BCYRankingFragment.newInstance(Net.BCY_ILLUST_RANK_TODAY));
-            fragments.add(BCYRankingFragment.newInstance(Net.BCY_ILLUST_RANK_ART_WORK));
             fragments.add(BCYRankingFragment.newInstance(Net.BCY_ILLUST_RANK_NEW_PEOPLE));
         } else if (type == COS) {
             fragments.add(BCYRankingFragment.newInstance(Net.BCY_COS_RANK_WEEK));
             fragments.add(BCYRankingFragment.newInstance(Net.BCY_COS_RANK_TODAY));
-            fragments.add(BCYRankingFragment.newInstance(Net.BCY_COS_RANK_ART_WORK));
             fragments.add(BCYRankingFragment.newInstance(Net.BCY_COS_RANK_NEW_PEOPLE));
         } else {
             fragments.add(null);

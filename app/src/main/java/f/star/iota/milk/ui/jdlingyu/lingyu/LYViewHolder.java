@@ -29,6 +29,9 @@ public class LYViewHolder extends BaseViewHolder<LYBean> {
     @BindView(R.id.card_view)
     CardView mCardView;
 
+    private final int width = 300;
+    private final int height = 300;
+
     public LYViewHolder(View itemView) {
         super(itemView);
     }
@@ -36,7 +39,7 @@ public class LYViewHolder extends BaseViewHolder<LYBean> {
     @Override
     public void bindView(final List<LYBean> beans) {
         final LYBean bean = beans.get(getAdapterPosition());
-        FrescoLoader.load(mSimpleDraweeView, bean.getUrl());
+        FrescoLoader.load(mSimpleDraweeView, bean.getUrl(),width,height);
         mCardView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -90,7 +93,7 @@ public class LYViewHolder extends BaseViewHolder<LYBean> {
         List<PCBean> imgs = new ArrayList<>();
         for (LYBean bean : beans) {
             imgs.add(new PCBean(bean.getUrl(), bean.getUrl(), Menus.MENU_JDLINGYU,
-                    "下载地址：" + bean.getUrl()));
+                    "下载地址：" + bean.getUrl(),bean.getHeaders()));
         }
         return imgs;
     }

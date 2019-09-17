@@ -38,7 +38,7 @@ public class TuViewHolder extends BaseViewHolder<TuBean> {
     public void bindView(final List<TuBean> beans) {
         final TuBean bean = beans.get(getAdapterPosition());
         final HashMap<String, String> headers = bean.getHeaders();
-        headers.put("Host", "i.meizitu.net");
+        headers.put("Host", "i5.meizitu.net");
         beans.get(getAdapterPosition()).setHeaders(headers);
         FrescoLoader.load(mSimpleDraweeView, bean.getUrl(), headers);
         mCardView.setOnLongClickListener(new View.OnLongClickListener() {

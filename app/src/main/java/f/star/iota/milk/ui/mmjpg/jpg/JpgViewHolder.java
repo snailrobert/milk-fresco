@@ -37,8 +37,6 @@ public class JpgViewHolder extends BaseViewHolder<JpgBean> {
     public void bindView(final List<JpgBean> beans) {
         final JpgBean bean = beans.get(getAdapterPosition());
         HashMap<String, String> headers = bean.getHeaders();
-        headers.put("Accept", "image/webp,image/*,*/*;q=0.8");
-        headers.put("Host", "img.mmjpg.com");
         FrescoLoader.load(mSimpleDraweeView, bean.getUrl(), headers);
         mCardView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override

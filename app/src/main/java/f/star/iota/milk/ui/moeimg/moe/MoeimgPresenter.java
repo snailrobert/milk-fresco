@@ -24,7 +24,7 @@ public class MoeimgPresenter extends StringPresenter<List<MoeimgBean>> {
         Elements select = Jsoup.parse(s).select("#main-2 > div.post");
         for (Element element : select) {
             MoeimgBean bean = new MoeimgBean();
-            String preview = element.select("div.more-field > div > a > img").attr("src");
+            String preview = element.select("div.box.list > a > div > img").attr("src");
             bean.setPreview(preview);
             String url = element.select("h2 > a").attr("href");
             bean.setUrl(url);

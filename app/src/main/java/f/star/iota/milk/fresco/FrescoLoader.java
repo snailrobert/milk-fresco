@@ -27,10 +27,18 @@ import f.star.iota.milk.R;
 public class FrescoLoader {
 
     public static void load(SimpleDraweeView draweeView, String path) {
-        load(draweeView, path, null);
+        load(draweeView, path,null,0,0);
     }
 
-    public static void load(SimpleDraweeView draweeView, String path, HashMap<String, String> headers) {
+    public static void load(SimpleDraweeView draweeView, String path ,int width,int height) {
+        load(draweeView, path, null,width,height);
+    }
+
+    public static void load(SimpleDraweeView draweeView, String path,HashMap<String, String> headers) {
+        load(draweeView, path, headers,0,0);
+    }
+
+    public static void load(SimpleDraweeView draweeView, String path, HashMap<String, String> headers,int width, int height) {
         if (TextUtils.isEmpty(path) || draweeView == null) return;
         Uri uri = Uri.parse(path);
         if (uri == null) return;
@@ -63,8 +71,11 @@ public class FrescoLoader {
 //            requestBuilder.setProgressiveRenderingEnabled(false);
 //        }
         requestBuilder.setProgressiveRenderingEnabled(false);
-        int width = draweeView.getWidth();
-        int height = draweeView.getHeight();
+        if(width > 0 && height > 0){
+            requestBuilder.setResizeOptions(new ResizeOptions(width, height));
+        }
+        width = draweeView.getWidth();
+        height = draweeView.getHeight();
         if (width > 0 && height > 0) {
             requestBuilder.setResizeOptions(new ResizeOptions(width, height));
         }

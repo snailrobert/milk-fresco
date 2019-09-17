@@ -3,15 +3,15 @@ package f.star.iota.milk.ui.jdlingyu.lingyu;
 
 import android.os.Bundle;
 
-import f.star.iota.milk.base.FixedImageFragment;
+import f.star.iota.milk.base.ScrollImageFragment;
 
 
-public class LYFragment extends FixedImageFragment<LYPresenter, LYAdapter> {
+public class LYFragment extends ScrollImageFragment<LYPresenter, LYAdapter> {
 
     public static LYFragment newInstance(String url) {
         LYFragment fragment = new LYFragment();
         Bundle bundle = new Bundle();
-        bundle.putString("base_url", url);
+        bundle.putString("base_url", url+"/");
         fragment.setArguments(bundle);
         return fragment;
     }

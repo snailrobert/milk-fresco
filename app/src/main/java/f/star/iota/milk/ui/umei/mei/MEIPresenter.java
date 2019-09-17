@@ -20,12 +20,20 @@ public class MEIPresenter extends StringPresenter<List<MEIBean>> {
     @Override
     protected List<MEIBean> dealResponse(String s, HashMap<String, String> headers) {
         List<MEIBean> list = new ArrayList<>();
-        Element element = Jsoup.parse(s).select("div.ImageBody > p > img").first();
+        Element element = Jsoup.parse(s).select("div.ImageBody > p > a > img").first();
         MEIBean bean = new MEIBean();
         String url = element.attr("src");
         bean.setUrl(url);
         bean.setHeaders(headers);
         list.add(bean);
         return list;
+    }
+
+    @Override
+    protected String dealUrl(String url) {
+        if (url.contains("_1.htm")) {
+            url = url.replace("_1.htm", ".htm");
+        }
+        return url;
     }
 }

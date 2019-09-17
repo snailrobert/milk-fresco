@@ -38,8 +38,8 @@ public class AtlasViewHolder extends BaseViewHolder<AtlasBean> {
         final AtlasBean bean = beans.get(getAdapterPosition());
         final HashMap<String, String> headers = bean.getHeaders();
         String referer = headers.get("Referer");
-        referer = referer.replace("?display=2", "");
-        headers.put("Host", "girlatlas.b0.upaiyun.com");
+        // referer = referer.replace("?display=2", "");
+        headers.put("Host", "img.meinvjpg.com");
         headers.put("Referer", referer);
         headers.put("accept", "image/webp,image/*,*/*;q=0.8");
         beans.get(getAdapterPosition()).setHeaders(headers);

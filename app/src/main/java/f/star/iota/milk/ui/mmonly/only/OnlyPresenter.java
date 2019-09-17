@@ -32,4 +32,13 @@ public class OnlyPresenter extends StringPresenter<List<OnlyBean>> {
         }
         return list;
     }
+
+    @Override
+    protected String dealUrl(String url) {
+        if (url.contains("_1.html")) {
+            url = url.replace("_1.html", ".html");
+        }
+        return url;
+    }
+
 }

@@ -32,4 +32,5 @@ public class TuPresenter extends StringPresenter<List<TuBean>> {
         }
         return list;
     }
+
 }

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import f.star.iota.milk.Net;
 import f.star.iota.milk.base.PVContract;
 import f.star.iota.milk.base.StringPresenter;
 
@@ -28,7 +29,7 @@ public class MmjpgPresenter extends StringPresenter<List<MmjpgBean>> {
             String preview = element.select("a > img").attr("src");
             bean.setPreview(preview);
             String url = element.select("a").attr("href");
-            bean.setUrl(url);
+            bean.setUrl(Net.MMJPG_BASE + url);
             bean.setHeaders(headers);
             String description = element.select("a > img").attr("alt");
             bean.setDescription(description);

@@ -9,20 +9,18 @@ import f.star.iota.milk.Net;
 import f.star.iota.milk.base.BaseActivity;
 import f.star.iota.milk.base.BaseFragment;
 import f.star.iota.milk.config.OtherConfig;
+import f.star.iota.milk.ui.acg17.acg.ACG17PagerFragment;
 import f.star.iota.milk.ui.akabe.a.AKabeFragment;
 import f.star.iota.milk.ui.animepictures.anime.AnimePictureFragment;
-import f.star.iota.milk.ui.apic.a.ApicPagerFragment;
 import f.star.iota.milk.ui.artstation.art.ArtStationFragment;
 import f.star.iota.milk.ui.bcy.ranking.BCYRankingPagerFragment;
-import f.star.iota.milk.ui.bcy.selected.BCYSelectedFragment;
 import f.star.iota.milk.ui.booru.BooruFragment;
 import f.star.iota.milk.ui.donmai.DonmaiFragment;
 import f.star.iota.milk.ui.eshuushuu.ESHUUSHUUFragment;
 import f.star.iota.milk.ui.gacha.GachaPagerFragment;
 import f.star.iota.milk.ui.gamersky.gamer.GamerSkyPagerFragment;
 import f.star.iota.milk.ui.jdlingyu.jd.JDLINGYUFragment;
-import f.star.iota.milk.ui.lingyu.ling.LingYuFragment;
-import f.star.iota.milk.ui.magmoe.mag.MagFragment;
+import f.star.iota.milk.ui.magmoe.mag.MagPagerFragment;
 import f.star.iota.milk.ui.mangadrawing.MangaDrawingHentaiPagerFragment;
 import f.star.iota.milk.ui.mangadrawing.MangaDrawingPagerFragment;
 import f.star.iota.milk.ui.minitokyo.MINITOKYOFragment;
@@ -30,7 +28,6 @@ import f.star.iota.milk.ui.moe005tv.moe.MOE005TVPagerFragment;
 import f.star.iota.milk.ui.moeimg.moe.MoeimgFragment;
 import f.star.iota.milk.ui.nijieroch.nijiero.NijieroCHFragment;
 import f.star.iota.milk.ui.pangci.PANGCIFragment;
-import f.star.iota.milk.ui.www005tv.www.WWW005TVPagerFragment;
 import f.star.iota.milk.ui.yuriimg.YuriImgPagerFragment;
 import f.star.iota.milk.ui.zerochan.ZerochanFragment;
 
@@ -73,9 +70,9 @@ public class MenuIllustrationFragment extends MenuFragment {
                 currentFragment = new GachaPagerFragment();
                 activity.setTitle(Menus.MENU_GACHA);
                 break;
-            case Menus.MENU_BCY_ILLUST_SELECTED_ID:
-                currentFragment = BCYSelectedFragment.newInstance(Net.BCY_ILLUST_SELECTED);
-                activity.setTitle(Menus.MENU_BCY_SELECTED);
+            case Menus.MENU_ACG17_ILLUST_ID:
+                currentFragment = ACG17PagerFragment.newInstance(ACG17PagerFragment.ILLUST);
+                activity.setTitle(Menus.MENU_ACG17);
                 break;
             case Menus.MENU_BCY_ILLUST_RANKING_ID:
                 currentFragment = BCYRankingPagerFragment.newInstance(BCYRankingPagerFragment.ILLUST);
@@ -90,13 +87,13 @@ public class MenuIllustrationFragment extends MenuFragment {
                 activity.setTitle(Menus.MENU_MANGA_DRAWING);
                 break;
             case Menus.MENU_MAG_MOE_MOE_ID:
-                currentFragment = MagFragment.newInstance(Net.MAG_MOE_MOE);
+                currentFragment = MagPagerFragment.newInstance(MagPagerFragment.ILLUST);
                 activity.setTitle(Menus.MENU_MAG_MOE);
                 break;
-            case Menus.MENU_APIC_ID:
-                currentFragment = new ApicPagerFragment();
-                activity.setTitle(Menus.MENU_APIC);
-                break;
+            // case Menus.MENU_APIC_ID:
+            //     currentFragment = new ApicPagerFragment();
+            //     activity.setTitle(Menus.MENU_APIC);
+            //     break;
             case Menus.MENU_ZEROCHAN_ID:
                 currentFragment = ZerochanFragment.newInstance(Net.ZEROCHAN);
                 activity.setTitle(Menus.MENU_ZEROCHAN);
@@ -113,19 +110,18 @@ public class MenuIllustrationFragment extends MenuFragment {
                 currentFragment = MINITOKYOFragment.newInstance(Net.MINITOKYO);
                 activity.setTitle(Menus.MENU_MINITOKYO);
                 break;
-            case Menus.MENU_WWW_005_TV_ACG_ID:
-                currentFragment = new WWW005TVPagerFragment();
-                activity.setTitle(Menus.MENU_WWW_005_TV);
-                break;
-
+            // case Menus.MENU_WWW_005_TV_ACG_ID:
+            //     currentFragment = new WWW005TVPagerFragment();
+            //     activity.setTitle(Menus.MENU_WWW_005_TV);
+            //     break;
             case Menus.MENU_JDLINGYU_ACG_ID:
                 currentFragment = JDLINGYUFragment.newInstance(Net.JDLINGYU_ACG);
                 activity.setTitle(Menus.MENU_JDLINGYU);
                 break;
-            case Menus.MENU_LINGYU_ID:
-                currentFragment = LingYuFragment.newInstance(Net.LINGYU);
-                activity.setTitle(Menus.MENU_LINGYU);
-                break;
+            // case Menus.MENU_LINGYU_ID:
+            //     currentFragment = LingYuFragment.newInstance(Net.LINGYU);
+            //     activity.setTitle(Menus.MENU_LINGYU);
+            //     break;
             case Menus.MENU_MOEIMG_ID:
                 if (!OtherConfig.getR(aContext)) {
                     currentFragment = MoeimgFragment.newInstance(Net.MOEIMG_H);
@@ -231,10 +227,10 @@ public class MenuIllustrationFragment extends MenuFragment {
                 "http://gacha.nosdn.127.net/71bb10f890de40b7aaa63504a121283c.jpeg?imageView&type=jpg&enlarge=1&quality=100&axis=0&thumbnail=0x400",
                 null
         ));
-        menu.add(new MenuBean(Menus.MENU_BCY_ILLUST_SELECTED_ID,
-                Menus.MENU_BCY_SELECTED,
-                Net.BCY_BASE,
-                "https://pubin.bcyimg.com/Image/sub-nav/logo-home-9e8a0985d6.png",
+        menu.add(new MenuBean(Menus.MENU_ACG17_ILLUST_ID,
+                Menus.MENU_ACG17,
+                Net.ACG17_BASE,
+                "https://i.loli.net/2018/10/02/5bb31fba269b8.png",
                 null
         ));
         menu.add(new MenuBean(Menus.MENU_BCY_ILLUST_RANKING_ID,
@@ -255,13 +251,13 @@ public class MenuIllustrationFragment extends MenuFragment {
                 "http://mag.moe/wp-content/themes/magmoe/img/logo.png",
                 null
         ));
-        menu.add(new MenuBean(
-                Menus.MENU_APIC_ID,
-                Menus.MENU_APIC,
-                Net.APIC_BASE,
-                "http://img.gov.com.de/2015/04/apic-in-%E6%A3%92%E6%A3%92%E7%B3%96-3-565x800.jpg",
-                Net.APIC_LOGIN
-        ));
+        // menu.add(new MenuBean(
+        //         Menus.MENU_APIC_ID,
+        //         Menus.MENU_APIC,
+        //         Net.APIC_BASE,
+        //         "http://img.gov.com.de/2015/04/apic-in-%E6%A3%92%E6%A3%92%E7%B3%96-3-565x800.jpg",
+        //         Net.APIC_LOGIN
+        // ));
         menu.add(new MenuBean(Menus.MENU_ZEROCHAN_ID,
                 Menus.MENU_ZEROCHAN,
                 Net.ZEROCHAN_BASE,
@@ -280,12 +276,12 @@ public class MenuIllustrationFragment extends MenuFragment {
                 "http://static2.minitokyo.net/view/46/07/707896.jpg",
                 null
         ));
-        menu.add(new MenuBean(Menus.MENU_WWW_005_TV_ACG_ID,
-                Menus.MENU_WWW_005_TV,
-                Net.WWW_005_TV_BASE,
-                "http://www.005.tv/templets/muban/style/images/bannerbg.jpg",
-                null
-        ));
+        // menu.add(new MenuBean(Menus.MENU_WWW_005_TV_ACG_ID,
+        //         Menus.MENU_WWW_005_TV,
+        //         Net.WWW_005_TV_BASE,
+        //         "http://www.005.tv/templets/muban/style/images/bannerbg.jpg",
+        //         null
+        // ));
         menu.add(new MenuBean(Menus.MENU_MOE005TV_ACG_ID,
                 Menus.MENU_MOE005TV,
                 Net.MOE005TV_BASE,
@@ -295,15 +291,15 @@ public class MenuIllustrationFragment extends MenuFragment {
         menu.add(new MenuBean(Menus.MENU_JDLINGYU_ACG_ID,
                 Menus.MENU_JDLINGYU,
                 Net.JDLINGYU_BASE,
-                "http://www.jdlingyu.moe/wp-content/uploads/2017/01/2017-01-07_20-57-14.png",
+                "http://www.jdlingyu.mobi/wp-content/uploads/2017/01/2017-01-07_20-57-14.png",
                 null
         ));
-        menu.add(new MenuBean(Menus.MENU_LINGYU_ID,
-                Menus.MENU_LINGYU,
-                Net.LINGYU_BASE,
-                "http://tp.lingyu.me/bz/uploads/2016/07/www.lingyu.me_20160728125540677.png",
-                null
-        ));
+        // menu.add(new MenuBean(Menus.MENU_LINGYU_ID,
+        //         Menus.MENU_LINGYU,
+        //         Net.LINGYU_BASE,
+        //         "http://tp.lingyu.me/bz/uploads/2016/07/www.lingyu.me_20160728125540677.png",
+        //         null
+        // ));
         menu.add(new MenuBean(Menus.MENU_ACG_GAMERSKY_ACG_ID,
                 Menus.MENU_ACG_GAMERSKY,
                 Net.GAMERSKY_BASE,
@@ -313,7 +309,7 @@ public class MenuIllustrationFragment extends MenuFragment {
         menu.add(new MenuBean(Menus.MENU_PANGCI_ID,
                 Menus.MENU_PANGCI,
                 Net.PANGCI_BASE,
-                "https://www.pangci.cc/skin2015/logo.png",
+                "https://www.mooyuu.com/skin2015/logo.png",
                 null
         ));
         menu.add(new MenuBean(Menus.MENU_YURIIMG_ID,

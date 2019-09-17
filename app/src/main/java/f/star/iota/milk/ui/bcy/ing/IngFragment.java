@@ -3,15 +3,16 @@ package f.star.iota.milk.ui.bcy.ing;
 
 import android.os.Bundle;
 
-import f.star.iota.milk.base.FixedImageFragment;
+import java.util.ArrayList;
+import java.util.List;
 
 
-public class IngFragment extends FixedImageFragment<IngPresenter, IngAdapter> {
+public class IngFragment extends IngFixedImageFragment<IngPresenter, IngAdapter> {
 
-    public static IngFragment newInstance(String url) {
+    public static IngFragment newInstance(List<String> imgs) {
         IngFragment fragment = new IngFragment();
         Bundle bundle = new Bundle();
-        bundle.putString("base_url", url);
+        bundle.putStringArrayList("imgs",(ArrayList<String>) imgs);
         fragment.setArguments(bundle);
         return fragment;
     }

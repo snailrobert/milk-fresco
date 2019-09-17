@@ -3,10 +3,10 @@ package f.star.iota.milk.ui.mmjpg.mm;
 
 import android.os.Bundle;
 
-import f.star.iota.milk.base.ScrollImageFragment;
+import f.star.iota.milk.base.MoreScrollImageFragment;
 
 
-public class MmjpgFragment extends ScrollImageFragment<MmjpgPresenter, MmjpgAdapter> {
+public class MmjpgFragment extends MoreScrollImageFragment<MmjpgPresenter, MmjpgAdapter> {
 
 
     public static MmjpgFragment newInstance(String url) {

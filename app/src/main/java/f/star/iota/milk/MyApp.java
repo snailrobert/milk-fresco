@@ -144,7 +144,7 @@ public class MyApp extends Application {
                         try {
                             Looper.prepare();
                             Toast.makeText(mContext, "很抱歉,程序出现异常,正在收集日志,若长时间无响应，请强制退出", Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(mContext, MainActivity.class));
+                            startActivity(new Intent(mContext, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                             Looper.loop();
                         } catch (Exception e) {
                             e.printStackTrace();

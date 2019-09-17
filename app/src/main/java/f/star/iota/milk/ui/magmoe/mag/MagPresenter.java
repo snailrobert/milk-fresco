@@ -21,17 +21,21 @@ public class MagPresenter extends StringPresenter<List<MagBean>> {
     @Override
     protected List<MagBean> dealResponse(String s, HashMap<String, String> headers) {
         List<MagBean> list = new ArrayList<>();
-        Elements select = Jsoup.parse(s).select("#main > article.list-item");
+        Elements select = Jsoup.parse(s).select("#main > ul.sp-grid > li");
         for (Element element : select) {
             MagBean bean = new MagBean();
-            String title = element.select("div.list-content > div.post-header > h2 > a").text();
+            String title = element.select("article > div.post-header > h2 > a").text();
+            // String title = element.select("div.list-content > div.post-header > h2 > a").text();
             bean.setTitle(title);
-            String url = element.select("div.list-content > div.post-header > h2 > a").attr("href");
+            String url = element.select("article > div.post-header > h2 > a").attr("href");
+            // String url = element.select("div.list-content > div.post-header > h2 > a").attr("href");
             bean.setUrl(url);
             bean.setHeaders(headers);
-            String subtitle = element.select("div.list-content > div.post-entry > p").text();
+            String subtitle = element.select("article > div.post-entry > p").text();
+            // String subtitle = element.select("div.list-content > div.post-entry > p").text();
             bean.setSubtitle(subtitle);
-            String preview = element.select("div.post-img > a > img").attr("src");
+            String preview = element.select("article > div.post-img > a > img").attr("src");
+            // String preview = element.select("div.post-img > a > img").attr("src");
             bean.setPreview(preview);
             list.add(bean);
         }

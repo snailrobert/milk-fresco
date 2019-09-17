@@ -8,8 +8,8 @@ buildscript {
         maven { url = 'https://dl.bintray.com/yuancloud/maven/' }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
-        classpath 'com.jakewharton:butterknife-gradle-plugin:latest.release'
+        classpath 'com.android.tools.build:gradle:3.2.1'
+        //classpath 'com.jakewharton:butterknife-gradle-plugin:8.6.0'
     }
 }
 

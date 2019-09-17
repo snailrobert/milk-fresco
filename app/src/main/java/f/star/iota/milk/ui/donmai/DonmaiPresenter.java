@@ -9,7 +9,6 @@ import java.util.Iterator;
 import java.util.List;
 
 import f.star.iota.milk.MyApp;
-import f.star.iota.milk.Net;
 import f.star.iota.milk.base.PVContract;
 import f.star.iota.milk.base.StringPresenter;
 import f.star.iota.milk.config.OtherConfig;
@@ -44,11 +43,11 @@ public class DonmaiPresenter extends StringPresenter<List<DonmaiBean>> {
         }
         for (DonmaiBean bean : beans) {
             if (url.contains("safebooru")) {
-                bean.setUrl(Net.SAFEBOORU_BASE + bean.getUrl());
-                bean.setPreview(Net.SAFEBOORU_BASE + bean.getPreview());
+                // bean.setUrl(Net.SAFEBOORU_BASE + bean.getUrl());
+                // bean.setPreview(Net.SAFEBOORU_BASE + bean.getPreview());
             } else if (url.contains("danbooru")) {
-                bean.setUrl(Net.DANBOORU_BASE + bean.getUrl());
-                bean.setPreview(Net.DANBOORU_BASE + bean.getPreview());
+                // bean.setUrl(Net.DANBOORU_BASE + bean.getUrl());
+                // bean.setPreview(Net.DANBOORU_BASE + bean.getPreview());
             }
         }
         return beans;

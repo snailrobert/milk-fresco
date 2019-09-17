@@ -44,11 +44,11 @@ public class YuriImgViewHolder extends BaseViewHolder<YuriImgBean> {
     public void bindView(final List<YuriImgBean> beans) {
         final YuriImgBean bean = beans.get(getAdapterPosition());
         final HashMap<String, String> headers = bean.getHeaders();
-        headers.put("Referer", "http://yuriimg.com/");
-        headers.put("Host", "yuriimg.com");
-        headers.put("Accept-Encoding", "gzip, deflate");
-        headers.put("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8");
-        beans.get(getAdapterPosition()).setHeaders(headers);
+        // headers.put("Referer", "http://yuriimg.com/");
+        // headers.put("Host", "yuriimg.com");
+        // headers.put("Accept-Encoding", "gzip, deflate");
+        // headers.put("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8");
+        // beans.get(getAdapterPosition()).setHeaders(headers);
         FrescoLoader.load(mSimpleDraweeView, bean.getUrl(), headers);
         mCardView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override

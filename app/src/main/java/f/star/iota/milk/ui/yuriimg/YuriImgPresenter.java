@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import f.star.iota.milk.Net;
 import f.star.iota.milk.base.PVContract;
 import f.star.iota.milk.base.StringPresenter;
 
@@ -26,9 +25,10 @@ public class YuriImgPresenter extends StringPresenter<List<YuriImgBean>> {
         Elements select = Jsoup.parse(s).select("#image-box div.image-list");
         for (Element element : select) {
             YuriImgBean bean = new YuriImgBean();
-            String url = Net.YURIIMG_BASE + element.select("div.image img").attr("data-viewersss");
+            String url = element.select("div.image img").attr("data-original");
+            // String url = Net.YURIIMG_BASE + element.select("div.image img").attr("data-viewersss");
             bean.setUrl(url);
-            bean.setHeaders(headers);
+            //bean.setHeaders(headers);
             String description = element.select("div.image img").attr("alt");
             bean.setDescription(description);
             String size = element.select("div.img-control > div.like > a > span").text();
