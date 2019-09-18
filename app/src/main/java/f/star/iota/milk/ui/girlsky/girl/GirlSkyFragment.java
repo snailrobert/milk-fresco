@@ -3,6 +3,7 @@ package f.star.iota.milk.ui.girlsky.girl;
 
 import android.os.Bundle;
 
+import f.star.iota.milk.Menus;
 import f.star.iota.milk.base.ScrollImageFragment;
 
 
@@ -26,5 +27,10 @@ public class GirlSkyFragment extends ScrollImageFragment<GirlSkyPresenter, GirlS
     @Override
     protected GirlSkyAdapter getAdapter() {
         return new GirlSkyAdapter();
+    }
+
+    @Override
+    public int getFragmentMenuID() {
+        return Menus.MENU_GIRLSKY_ID;
     }
 }

@@ -28,6 +28,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected Context aContext;
     private Unbinder unbinder;
 
+    //记录当前加载的是哪个Fragment
+    protected BaseFragment currSearchFragment;
+
     protected void handleIntent(Intent intent) {
 
     }
@@ -89,6 +92,7 @@ public abstract class BaseActivity extends AppCompatActivity {
             FragmentTransaction tx = fm.beginTransaction();
             tx.replace(getFragmentContainerId(), fragment);
             tx.commit();
+            currSearchFragment = fragment;
         }
     }
 

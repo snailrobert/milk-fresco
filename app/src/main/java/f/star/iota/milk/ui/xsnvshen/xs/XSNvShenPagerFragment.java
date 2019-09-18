@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import f.star.iota.milk.Menus;
 import f.star.iota.milk.Net;
 import f.star.iota.milk.R;
 import f.star.iota.milk.base.PagerFragment;
@@ -93,5 +94,10 @@ public class XSNvShenPagerFragment extends PagerFragment {
     protected void init() {
         super.init();
         mViewPager.setOffscreenPageLimit(0);
+    }
+
+    @Override
+    public int getFragmentMenuID() {
+        return Menus.MENU_XSNVSHEN_MEINV_ID;
     }
 }

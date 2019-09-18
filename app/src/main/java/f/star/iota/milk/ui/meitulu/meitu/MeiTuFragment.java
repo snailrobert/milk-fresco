@@ -3,6 +3,7 @@ package f.star.iota.milk.ui.meitulu.meitu;
 
 import android.os.Bundle;
 
+import f.star.iota.milk.Menus;
 import f.star.iota.milk.base.MoreScrollImageFragment;
 
 
@@ -27,4 +28,10 @@ public class MeiTuFragment extends MoreScrollImageFragment<MeiTuPresenter, MeiTu
     protected MeiTuAdapter getAdapter() {
         return new MeiTuAdapter();
     }
+
+    @Override
+    public int getFragmentMenuID() {
+        return Menus.MENU_MEITULU_ID;
+    }
+
 }

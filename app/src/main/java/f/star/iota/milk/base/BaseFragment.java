@@ -33,6 +33,14 @@ public abstract class BaseFragment extends Fragment {
     public void scrollToTop() {
     }
 
+    public int getFragmentMenuID() {
+        return 0;
+    }
+
+    protected void setTitle(CharSequence title) {
+        getActivity().setTitle(title);
+    }
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

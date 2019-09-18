@@ -3,6 +3,7 @@ package f.star.iota.milk.ui.xsnvshen.xs;
 
 import android.os.Bundle;
 
+import f.star.iota.milk.Menus;
 import f.star.iota.milk.base.MoreScrollImageFragment;
 
 
@@ -25,5 +26,10 @@ public class XSNvShenFragment extends MoreScrollImageFragment<XSNvShenPresenter,
     @Override
     protected XSNvShenAdapter getAdapter() {
         return new XSNvShenAdapter();
+    }
+
+    @Override
+    public int getFragmentMenuID() {
+        return Menus.MENU_XSNVSHEN_MEINV_ID;
     }
 }

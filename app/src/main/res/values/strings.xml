@@ -97,4 +97,6 @@
     <string name="you_are_good">其实你已经很努力了\nｸﾞｯ!(๑•̀ㅂ•́)و✧</string>
     <string name="gamersky">GAMERSKY</string>
     <string name="pic">图片源</string>
+    <string name="action_search">搜索</string>
+    <string name="search_hint">请输入关键字</string>
 </resources>

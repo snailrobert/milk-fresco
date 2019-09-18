@@ -1,6 +1,8 @@
 package f.star.iota.milk.ui.main;
 
 import android.annotation.SuppressLint;
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -8,6 +10,7 @@ import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -54,6 +57,7 @@ import f.star.iota.milk.ui.menu.MenuMeiziFragment;
 import f.star.iota.milk.ui.menu.MenuWallpaperFragment;
 import f.star.iota.milk.ui.moeimg.moe.MoeimgFragment;
 import f.star.iota.milk.ui.more.MoreActivity;
+import f.star.iota.milk.ui.search.SearchFragment;
 import f.star.iota.milk.ui.settings.SettingsActivity;
 import f.star.iota.milk.util.MediaUtils;
 import f.star.iota.milk.util.MessageBar;
@@ -304,6 +308,46 @@ public class MainActivity extends BaseActivity implements XExecutor.OnAllTaskEnd
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
+        // searchView.setOnSearchClickListener(new View.OnClickListener() {
+        //     @Override
+        //     public void onClick(View v) {
+        //         Toast.makeText(MainActivity.this,"Open",Toast.LENGTH_SHORT).show();
+        //     }
+        // });
+        // searchView.setOnCloseListener(new SearchView.OnCloseListener() {
+        //     @Override
+        //     public boolean onClose() {
+        //         Toast.makeText(MainActivity.this, "Close", Toast.LENGTH_SHORT).show();
+        //         return false;
+        //     }
+        // });
+        // 设置搜索文本监听
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            // 当点击搜索按钮时触发该方法
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                int type  = currSearchFragment.getFragmentMenuID();
+                if(type == 0){
+                    MessageBar.create(mContext, "此站点没有提供搜索");
+                    return false;
+                }
+                String keywords = query;
+                removeFragmentContainerChildrenViews();
+                showFragment(SearchFragment.newInstance(type,keywords,"搜索:" + keywords));
+                //清除焦点，收软键盘
+                //mSearchView.clearFocus();
+                return false;
+            }
+            // 当搜索内容改变时触发该方法
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
+        searchView.setQueryHint(getString(R.string.search_hint));
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         return true;
     }
 
@@ -392,4 +436,22 @@ public class MainActivity extends BaseActivity implements XExecutor.OnAllTaskEnd
                 });
 
     }
+
+
+    // @Override
+    // protected void onNewIntent(Intent intent) {
+    //     if (!intent.getAction().equals(Intent.ACTION_SEARCH)) {
+    //         return;
+    //     }
+    //     int type  = currentFragment.getFragmentMenuID();
+    //     if(type == 0){
+    //         return;
+    //     }
+    //     String keywords = intent.getStringExtra(SearchManager.QUERY);
+    //     removeFragmentContainerChildrenViews();
+    //     showFragment(SearchFragment.newInstance(type,keywords,"搜索:" + keywords));
+    // }
+
 }
+
+

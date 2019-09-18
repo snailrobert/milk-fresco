@@ -3,6 +3,7 @@ package f.star.iota.milk.ui.xsnvshen.shen;
 
 import android.os.Bundle;
 
+import f.star.iota.milk.Menus;
 import f.star.iota.milk.base.ScrollImageFragment;
 
 
@@ -29,5 +30,10 @@ public class ShenFragment extends ScrollImageFragment<ShenPresenter, ShenAdapter
     @Override
     protected boolean isHideFab() {
         return false;
+    }
+
+    @Override
+    public int getFragmentMenuID() {
+        return Menus.MENU_XSNVSHEN_MEINV_ID;
     }
 }

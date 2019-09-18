@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import java.util.ArrayList;
 import java.util.List;
 
+import f.star.iota.milk.Menus;
 import f.star.iota.milk.Net;
 import f.star.iota.milk.base.PagerFragment;
 import f.star.iota.milk.base.TitlePagerAdapter;
@@ -41,5 +42,10 @@ public class GirlSkyPagerFragment extends PagerFragment {
     @Override
     protected int setTabMode() {
         return TabLayout.MODE_SCROLLABLE;
+    }
+
+    @Override
+    public int getFragmentMenuID() {
+        return Menus.MENU_GIRLSKY_ID;
     }
 }

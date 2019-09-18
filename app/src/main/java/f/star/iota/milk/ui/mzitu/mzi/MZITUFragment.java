@@ -3,6 +3,7 @@ package f.star.iota.milk.ui.mzitu.mzi;
 
 import android.os.Bundle;
 
+import f.star.iota.milk.Menus;
 import f.star.iota.milk.base.ScrollImageFragment;
 
 
@@ -25,5 +26,10 @@ public class MZITUFragment extends ScrollImageFragment<MZITUPresenter, MZITUAdap
     @Override
     protected MZITUAdapter getAdapter() {
         return new MZITUAdapter();
+    }
+
+    @Override
+    public int getFragmentMenuID() {
+        return Menus.MENU_MZITU_ID;
     }
 }
