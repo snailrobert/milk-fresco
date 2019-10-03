@@ -11,7 +11,7 @@ public class BaFragment extends ScrollImageFragment<BaPresenter, BaAdapter> {
     public static BaFragment newInstance(String url) {
         BaFragment fragment = new BaFragment();
         Bundle bundle = new Bundle();
-        bundle.putString("base_url", url);
+        bundle.putString("base_url", url+"/");
         bundle.putString("page_suffix", "/");
         fragment.setArguments(bundle);
         return fragment;

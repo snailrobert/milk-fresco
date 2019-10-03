@@ -107,8 +107,90 @@ public class SearchPresenter extends StringPresenter<List<SearchBean>> {
                     list.add(bean);
                 }
                 break;
+            case Menus.MENU_TU963_ID:
+                select = Jsoup.parse(s).select("body > div.w1200 > div.listMeinuT > ul > li");
+                for (Element element : select) {
+                    SearchBean bean = new SearchBean();
+                    String preview = element.select("a > img").attr("src");
+                    bean.setPreview(preview);
+                    String url = element.select("a").attr("href");
+                    bean.setUrl(url);
+                    bean.setHeaders(headers);
+                    String description = element.select("a").attr("title");
+                    bean.setDescription(description.replaceAll("\\&[a-zA-Z]{0,9};","").replaceAll("<[^>]*>",""));
+                    bean.setType(type);
+                    list.add(bean);
+                }
+                break;
+            case Menus.MENU_ITMTU_ID:
+                select = Jsoup.parse(s).select("#index_ajax_list > li");
+                for (Element element : select) {
+                    SearchBean bean = new SearchBean();
+                    String preview = element.select("a > img").attr("data-original");
+                    bean.setPreview(preview);
+                    String url = element.select("a").attr("href");
+                    bean.setUrl(Net.ITMTU_BASE + url);
+                    bean.setHeaders(headers);
+                    String description = element.select("a > img").attr("alt");
+                    bean.setDescription(description);
+                    bean.setType(type);
+                    list.add(bean);
+                }
+                break;
+            case Menus.MENU_ISAOB_ID:
+                select = Jsoup.parse(s).select("body > div.container-fluid.my-4 > div.offset-md-1.col-md-10.col-sm-12> div.row.mt-2 > div");
+                for (Element element : select) {
+                    SearchBean bean = new SearchBean();
+                    String preview = element.select("img").attr("src");
+                    bean.setPreview(preview);
+                    String url = element.select("div.item-title > a").attr("href");
+                    bean.setUrl(url);
+                    bean.setHeaders(headers);
+                    String description = element.select("img").attr("alt");
+                    bean.setDescription(description);
+                    bean.setType(type);
+                    list.add(bean);
+                }
+                break;
+            case Menus.MENU_NVSHENS_TAG_ID:
+                select = Jsoup.parse(s).select("table#DataList1 > tbody > tr > td");
+                for (Element element : select) {
+                    if(element.select("li") == null ||element.select("li").size() ==0){
+                        break;
+                    }
+                    SearchBean bean = new SearchBean();
+                    String preview = element.select("li > div > a > img").attr("src");
+                    bean.setPreview(preview);
+                    String url = element.select("li > div > a").attr("href");
+                    bean.setUrl(Net.NVSHENS_BASE + url);
+                    bean.setHeaders(headers);
+                    String description = element.select("li > div > div > a").text();
+                    bean.setDescription(description);
+                    bean.setType(type);
+                    list.add(bean);
+                }
+                break;
+            case Menus.MENU_PIXIVIC_ID:
+                SearchBean bean = new SearchBean();
+                bean.setPreview("https://wx3.sinaimg.cn/large/007iuyE8gy1g2oenbohijj31uo1amgt4.jpg");
+                bean.setUrl(headers.get("Referer").substring(0,headers.get("Referer").lastIndexOf("=")+1));
+                bean.setHeaders(headers);
+                bean.setDescription("Pixiv Illustration Collection");
+                bean.setType(type);
+                list.add(bean);
+                break;
         }
         return list;
     }
+
+    @Override
+    protected String charset() {
+        if(type == Menus.MENU_TU963_ID){
+            return "gb2312";
+        }else{
+            return null;
+        }
+    }
+
 
 }

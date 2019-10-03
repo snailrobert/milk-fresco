@@ -39,8 +39,8 @@ public interface Menus {
     String MENU_ANIME_PICTURES = "ANIME-PICTURES";
     int MENU_ANIME_PICTURES_ID = 8;
 
-    String MENU_BEHOIMI = "BEHOIMI";
-    int MENU_BEHOIMI_ID = 9;
+    String MENU_THREEYCY = "THREEYCY";
+    int MENU_THREEYCY_ID = 9;
 
     String MENU_WALLHAVEN = "WALLHAVEN";
     int MENU_WALLHAVEN_ID = 10;
@@ -88,8 +88,10 @@ public interface Menus {
     String MENU_MINITOKYO = "MINITOKYO";
     int MENU_MINITOKYO_ID = 26;
 
+    String MENU_PIXIVIC = "PIXIVIC";
+    int MENU_PIXIVIC_ID = 27;
+
     String MENU_WWW_005_TV = "WWW.005.TV";
-    // int MENU_WWW_005_TV_ACG_ID = 27;
     int MENU_WWW_005_TV_COS_ID = 28;
 
     String MENU_JDLINGYU = "JDLINGYU";
@@ -223,5 +225,27 @@ public interface Menus {
 
     String MENU_80ZU = "80ZU";
     int MENU_80ZU_ID = 76;
+
+    String MENU_TU963 = "TU963";
+    int MENU_TU963_ID = 77;
+
+    String MENU_ITMTU = "ITMTU";
+    int MENU_ITMTU_ID = 78;
+
+    String MENU_GKDGIF = "GKDGIF";
+    int MENU_GKDGIF_ID = 79;
+
+    String MENU_WOAIMEIZI = "WOAIMEIZI";
+    int MENU_WOAIMEIZI_ID = 80;
+
+    String MENU_ISAOB = "ISAOB";
+    int MENU_ISAOB_ID = 81;
+
+    String MENU_MEINVYH = "MEINVYH";
+    int MENU_MEINVYH_ID = 82;
+
+    String MENU_NVSHENS = "NVSHENS";
+    int MENU_NVSHENS_GALLERY_ID = 83;
+    int MENU_NVSHENS_TAG_ID = 84;
 
 }

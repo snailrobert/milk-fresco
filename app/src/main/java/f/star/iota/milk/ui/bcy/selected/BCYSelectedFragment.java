@@ -3,10 +3,10 @@
 //
 // import android.os.Bundle;
 //
-// import f.star.iota.milk.base.ScrollImageFragment;
+// import f.star.iota.milk.base.ThreeYCYScrollImageFragment;
 //
 //
-// public class BCYSelectedFragment extends ScrollImageFragment<BCYSelectedPresenter, BCYSelectedAdapter> {
+// public class BCYSelectedFragment extends ThreeYCYScrollImageFragment<BCYSelectedPresenter, BCYSelectedAdapter> {
 //
 //     public static BCYSelectedFragment newInstance(String url) {
 //         BCYSelectedFragment fragment = new BCYSelectedFragment();

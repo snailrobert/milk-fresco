@@ -4,6 +4,10 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +16,7 @@ import f.star.iota.milk.Net;
 import f.star.iota.milk.R;
 import f.star.iota.milk.base.PagerFragment;
 import f.star.iota.milk.base.TitlePagerAdapter;
+import f.star.iota.milk.util.ReadResourceUtil;
 
 
 public class YuLeBaPagerFragment extends PagerFragment {
@@ -48,6 +53,15 @@ public class YuLeBaPagerFragment extends PagerFragment {
         fragments.add(YuLeBaFragment.newInstance(Net.YULEBA_JINPINTAOTU));
         fragments.add(YuLeBaFragment.newInstance(Net.YULEBA_MIENVMOTE));
         fragments.add(YuLeBaFragment.newInstance(Net.YULEBA_XIUREN));
+
+        String s = ReadResourceUtil.readBufferResource(R.raw.yuleba);
+        Elements selects = Jsoup.parseBodyFragment(s).select("a");
+        for(Element a : selects){
+            String url = Net.YULEBA_BASE + a.attr("href").replace("0.html","");
+            String tagName = a.select("a").text();
+            titles.add(tagName);
+            fragments.add(YuLeBaFragment.newInstance(url));
+        }
         return new TitlePagerAdapter(getChildFragmentManager(), fragments, titles);
     }
 

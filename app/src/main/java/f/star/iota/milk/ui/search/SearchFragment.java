@@ -57,6 +57,50 @@ public class SearchFragment extends ScrollImageFragment<SearchPresenter, SearchA
                     e.printStackTrace();
                 }
                 break;
+            case Menus.MENU_TU963_ID:
+                try {
+                    bundle.putString("base_url", "https://www.tu963.net/plus/search.php?keyword="+URLEncoder.encode(param.trim(),"gb2312")+"&pagesize=30&page=");
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                break;
+            case Menus.MENU_ITMTU_ID:
+                try {
+                    bundle.putString("base_url", "http://www.itmtu.com/page/");
+                    bundle.putString("page_suffix","/?s=" +URLEncoder.encode(param.trim(),"UTF-8"));
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                break;
+            case Menus.MENU_GKDGIF_ID:
+                try {
+                    bundle.putString("base_url", "https://gkdgif.com/page/");
+                    bundle.putString("page_suffix","/?s=" +URLEncoder.encode(param.trim(),"UTF-8")+"&type=all");
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                break;
+            case Menus.MENU_PIXIVIC_ID:
+                try {
+                    bundle.putString("base_url","https://search.api.pixivic.com/illustrations?keyword="+URLEncoder.encode(param.trim(),"UTF-8")+"&page=");
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                break;
+            case Menus.MENU_ISAOB_ID:
+                try {
+                    bundle.putString("base_url","http://www.isaob.com/tag/"+URLEncoder.encode(param.trim(),"UTF-8")+"/");
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                break;
+            case Menus.MENU_NVSHENS_TAG_ID:
+                try {
+                    bundle.putString("base_url","https://www.nvshens.net/girl/search.aspx?name="+URLEncoder.encode(param.trim(),"UTF-8")+"&P=");
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                break;
         }
         fragment.setArguments(bundle);
         return fragment;

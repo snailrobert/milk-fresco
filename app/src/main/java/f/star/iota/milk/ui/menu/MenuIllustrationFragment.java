@@ -29,6 +29,7 @@ import f.star.iota.milk.ui.moe005tv.moe.MOE005TVPagerFragment;
 import f.star.iota.milk.ui.moeimg.moe.MoeimgFragment;
 import f.star.iota.milk.ui.nijieroch.nijiero.NijieroCHFragment;
 import f.star.iota.milk.ui.pangci.PANGCIFragment;
+import f.star.iota.milk.ui.pixivic.PixivicFragment;
 import f.star.iota.milk.ui.yuriimg.YuriImgPagerFragment;
 import f.star.iota.milk.ui.zerochan.ZerochanFragment;
 
@@ -115,10 +116,10 @@ public class MenuIllustrationFragment extends MenuFragment {
                 currentFragment = MINITOKYOFragment.newInstance(Net.MINITOKYO);
                 activity.setTitle(Menus.MENU_MINITOKYO);
                 break;
-            // case Menus.MENU_WWW_005_TV_ACG_ID:
-            //     currentFragment = new WWW005TVPagerFragment();
-            //     activity.setTitle(Menus.MENU_WWW_005_TV);
-            //     break;
+            case Menus.MENU_PIXIVIC_ID:
+                currentFragment =  PixivicFragment.newInstance(Net.PIXIVIC_DEAFULT);
+                activity.setTitle(Menus.MENU_PIXIVIC);
+                break;
             case Menus.MENU_JDLINGYU_ACG_ID:
                 currentFragment = JDLINGYUFragment.newInstance(Net.JDLINGYU_ACG);
                 activity.setTitle(Menus.MENU_JDLINGYU);
@@ -287,12 +288,12 @@ public class MenuIllustrationFragment extends MenuFragment {
                 "http://static2.minitokyo.net/view/46/07/707896.jpg",
                 null
         ));
-        // menu.add(new MenuBean(Menus.MENU_WWW_005_TV_ACG_ID,
-        //         Menus.MENU_WWW_005_TV,
-        //         Net.WWW_005_TV_BASE,
-        //         "http://www.005.tv/templets/muban/style/images/bannerbg.jpg",
-        //         null
-        // ));
+        menu.add(new MenuBean(Menus.MENU_PIXIVIC_ID,
+                Menus.MENU_PIXIVIC,
+                Net.PIXIVIC_BASE,
+                "https://wx3.sinaimg.cn/large/007iuyE8gy1g2oenbohijj31uo1amgt4.jpg",
+                null
+        ));
         menu.add(new MenuBean(Menus.MENU_MOE005TV_ACG_ID,
                 Menus.MENU_MOE005TV,
                 Net.MOE005TV_BASE,

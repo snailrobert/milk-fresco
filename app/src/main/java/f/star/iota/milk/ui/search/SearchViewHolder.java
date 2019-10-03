@@ -19,9 +19,14 @@ import f.star.iota.milk.base.BaseFragment;
 import f.star.iota.milk.base.BaseViewHolder;
 import f.star.iota.milk.fresco.FrescoLoader;
 import f.star.iota.milk.ui.girlsky.girl.GirlSkyFragment;
+import f.star.iota.milk.ui.gkdgif.gif.GifFragment;
+import f.star.iota.milk.ui.isaob.b.BFragment;
+import f.star.iota.milk.ui.itmtu.mtu.MtuFragment;
 import f.star.iota.milk.ui.meitulu.meitu.MeiTuFragment;
 import f.star.iota.milk.ui.meitumen.meitu.MeiTuMenFragment;
 import f.star.iota.milk.ui.mzitu.tu.TuFragment;
+import f.star.iota.milk.ui.pixivic.PixivicFragment;
+import f.star.iota.milk.ui.tu963.www.TUFragment;
 import f.star.iota.milk.ui.xsnvshen.nv.NvShenFragment;
 import f.star.iota.milk.ui.xsnvshen.shen.ShenFragment;
 
@@ -104,6 +109,25 @@ public class SearchViewHolder extends BaseViewHolder<SearchBean> {
             case Menus.MENU_GIRLSKY_ID:
                 baseFragment =  GirlSkyFragment.newInstance(url);
                 break;
+            case Menus.MENU_TU963_ID:
+                baseFragment =  TUFragment.newInstance(url);
+                break;
+            case Menus.MENU_ITMTU_ID:
+                baseFragment =  MtuFragment.newInstance(url);
+                break;
+            case Menus.MENU_GKDGIF_ID:
+                baseFragment =  GifFragment.newInstance(url);
+                break;
+            case Menus.MENU_PIXIVIC_ID:
+                baseFragment =  PixivicFragment.newInstance(url);
+                break;
+            case Menus.MENU_ISAOB_ID:
+                baseFragment =  BFragment.newInstance(url);
+                break;
+            case Menus.MENU_NVSHENS_TAG_ID:
+                baseFragment =  f.star.iota.milk.ui.nvshens.shen.ShenFragment.newInstance(url);
+                break;
+
         }
         return  baseFragment;
     }

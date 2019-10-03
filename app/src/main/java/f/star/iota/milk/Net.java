@@ -150,6 +150,9 @@ public class Net {
     public static final String MINITOKYO = "http://gallery.minitokyo.net/wallpapers?order=id&tid=&elite=0&highlight=0&dim=&display=thumbnails&page=";
     public static final String MINITOKYO_BASE = "http://gallery.minitokyo.net";
 
+    public static final String PIXIVIC_DEAFULT = "https://search.api.pixivic.com/illustrations?keyword=%E5%A3%81%E7%BA%B8&page=";
+    public static final String PIXIVIC_BASE = "https://pixivic.com";
+
     public static final String WWW_005_TV_BASE = "http://www.005.tv";
     public static final String WWW_005_TV_COS = "http://www.005.tv/Cosplay/list_522_";
 
@@ -367,5 +370,42 @@ public class Net {
     public static final String MM8MM88_BASE = "http://www.mm8mm88.com";
 
     public static final String ZU80_BASE = "https://www.80zu.com";
+
+    public static final String TU963_BASE = "https://www.tu963.net";
+
+    public static final String ITMTU_BASE = "http://www.itmtu.com";
+
+
+    public static final String GKDGIF_SCYT = "https://gkdgif.com/scyt";
+    public static final String GKDGIF_SNYH = "https://gkdgif.com/scyt/snyh";
+    public static final String GKDGIF_TZSN = "https://gkdgif.com/scyt/tzsn";
+    public static final String GKDGIF_MSNS = "https://gkdgif.com/scyt/msns";
+    public static final String GKDGIF_YJSJ = "https://gkdgif.com/scyt/yjsj";
+    public static final String GKDGIF_qt = "https://gkdgif.com/scyt/qt";
+    public static final String GKDGIF_BASE = "https://gkdgif.com";
+
+
+
+    public static final String THREEYCY_START = "http://www.3ycy.com/?start=";
+    public static final String THREEYCY_BASE = "http://www.3ycy.com";
+
+    public static final String WOAIMEIZI_SEXY = "https://www.woaimeizi.com/sexy";
+    public static final String WOAIMEIZI_PURE = "https://www.woaimeizi.com/pure";
+    public static final String WOAIMEIZI_ANIME = "https://www.woaimeizi.com/anime";
+    public static final String WOAIMEIZI_TEMPT = "https://www.woaimeizi.com/tempt";
+    public static final String WOAIMEIZI_LEG = "https://www.woaimeizi.com/leg";
+    public static final String WOAIMEIZI_LOLITA = "https://www.woaimeizi.com/lolita";
+    public static final String WOAIMEIZI_SIFANG = "https://www.woaimeizi.com/sifang";
+    public static final String WOAIMEIZI_COSPLAY = "https://www.woaimeizi.com/cosplay";
+    public static final String WOAIMEIZI_BASE = "https://www.woaimeizi.com";
+
+    public static final String ISAOB_BASE = "http://www.isaob.com";
+
+    public static final String MEINVYH_MAIN = "http://233s.com/plugin.php?id=group&page=";
+    public static final String MEINVYH_BASE = "http://233s.com";
+
+
+    public static final String NVSHENS_BASE = "https://www.nvshens.net";
+
 
 }

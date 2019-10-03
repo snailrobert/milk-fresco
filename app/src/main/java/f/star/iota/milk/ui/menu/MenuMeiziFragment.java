@@ -18,11 +18,15 @@ import f.star.iota.milk.ui.gamersky.gamer.GamerSkyFragment;
 import f.star.iota.milk.ui.gank.GankFragment;
 import f.star.iota.milk.ui.girlatlas.girl.GirlAtlasPagerFragment;
 import f.star.iota.milk.ui.girlsky.girl.GirlSkyPagerFragment;
+import f.star.iota.milk.ui.gkdgif.gkd.GkdGifPagerFragment;
 import f.star.iota.milk.ui.gravuregirlz.gravure.GravureGirlZFragment;
+import f.star.iota.milk.ui.isaob.isao.ISaoPagerFragment;
+import f.star.iota.milk.ui.itmtu.it.ItMtuPagerFragment;
 import f.star.iota.milk.ui.ituba.itu.ITuBaPagerFragment;
 import f.star.iota.milk.ui.jdlingyu.jd.JDLINGYUPagerFragment;
 import f.star.iota.milk.ui.kissgoddess.goddess.KissGoddessPagerFragment;
 import f.star.iota.milk.ui.magmoe.mag.MagPagerFragment;
+import f.star.iota.milk.ui.meinvyh.mzi.MeiNvFragment;
 import f.star.iota.milk.ui.meitulu.meitu.MeiTuPagerFragment;
 import f.star.iota.milk.ui.meitumen.meitu.MeiTuMenPagerFragment;
 import f.star.iota.milk.ui.mm8mm88.mm8mm.MM8MMPagerFragment;
@@ -32,8 +36,12 @@ import f.star.iota.milk.ui.mmonly.mm.MMONLYFragment;
 import f.star.iota.milk.ui.moe005tv.moe.MOE005TVPagerFragment;
 import f.star.iota.milk.ui.mzitu.mzi.MZITUFragment;
 import f.star.iota.milk.ui.ncjlh.jlh.NcJlhPagerFragment;
+import f.star.iota.milk.ui.nvshens.nv.NvShenPagerFragment;
 import f.star.iota.milk.ui.rosimm.rosi.ROSIMMPagerFragment;
+import f.star.iota.milk.ui.threeycy.ycy.ThreeYCYFragment;
+import f.star.iota.milk.ui.tu963.zu.TU963PagerFragment;
 import f.star.iota.milk.ui.umei.u.UMEIFragment;
+import f.star.iota.milk.ui.woaimeizi.woai.WoAiMeiZiPagerFragment;
 import f.star.iota.milk.ui.www005tv.www.WWW005TVFragment;
 import f.star.iota.milk.ui.www52guzhuang.guzhuang.GuZhuangPagerFragment;
 import f.star.iota.milk.ui.wwwmm131net.www.WWWMM131NETPagerFragment;
@@ -211,6 +219,43 @@ public class MenuMeiziFragment extends MenuFragment {
                 currentFragment = new ZU80PagerFragment();
                 activity.setTitle(Menus.MENU_80ZU);
                 break;
+            case Menus.MENU_TU963_ID:
+                currentFragment = new TU963PagerFragment();
+                activity.setTitle(Menus.MENU_TU963);
+                break;
+            case Menus.MENU_ITMTU_ID:
+                currentFragment = new ItMtuPagerFragment();
+                activity.setTitle(Menus.MENU_ITMTU);
+                break;
+            case Menus.MENU_GKDGIF_ID:
+                currentFragment = new GkdGifPagerFragment();
+                activity.setTitle(Menus.MENU_GKDGIF);
+                break;
+            case Menus.MENU_THREEYCY_ID:
+                currentFragment = ThreeYCYFragment.newInstance(Net.THREEYCY_START);
+                activity.setTitle(Menus.MENU_THREEYCY);
+                break;
+            case Menus.MENU_ISAOB_ID:
+                currentFragment = new ISaoPagerFragment();
+                activity.setTitle(Menus.MENU_ISAOB);
+                break;
+            case Menus.MENU_WOAIMEIZI_ID:
+                currentFragment = new WoAiMeiZiPagerFragment();
+                activity.setTitle(Menus.MENU_WOAIMEIZI);
+                break;
+            case Menus.MENU_MEINVYH_ID:
+                currentFragment = MeiNvFragment.newInstance(Net.MEINVYH_MAIN);
+                activity.setTitle(Menus.MENU_MEINVYH);
+                break;
+            case Menus.MENU_NVSHENS_GALLERY_ID:
+                currentFragment = NvShenPagerFragment.newInstance(NvShenPagerFragment.GALLERY);
+                activity.setTitle(Menus.MENU_NVSHENS);
+                break;
+            case Menus.MENU_NVSHENS_TAG_ID:
+                currentFragment = NvShenPagerFragment.newInstance(NvShenPagerFragment.TAG);
+                activity.setTitle(Menus.MENU_NVSHENS);
+                break;
+
         }
         activity.removeFragmentContainerChildrenViews();
         activity.showFragment(currentFragment);
@@ -287,6 +332,24 @@ public class MenuMeiziFragment extends MenuFragment {
                 Net.MM8MM88_BASE, "http://www.mm8mm88.com/static/sites/private/logos/mm8mm88.com.png?20180131", null));
         menu.add(new MenuBean(Menus.MENU_80ZU_ID, Menus.MENU_80ZU,
                 Net.ZU80_BASE, "http://www.80zu.com/wp-content/uploads/2019/03/logo-1.png", null));
+        menu.add(new MenuBean(Menus.MENU_TU963_ID, Menus.MENU_TU963,
+                Net.TU963_BASE, "https://www.tu963.net/images/logoNew.png", null));
+        menu.add(new MenuBean(Menus.MENU_ITMTU_ID, Menus.MENU_ITMTU,
+                Net.ITMTU_BASE, "http://www.itmtu.com/wp-content/uploads/2019/08/logo.png", null));
+        menu.add(new MenuBean(Menus.MENU_GKDGIF_ID, Menus.MENU_GKDGIF,
+                Net.GKDGIF_BASE,"https://i.gkdgif.com/images/2019/09/19/gkd-logo-f336d1d6a7f9b292.png", null));
+        menu.add(new MenuBean(Menus.MENU_THREEYCY_ID, Menus.MENU_THREEYCY,
+                Net.THREEYCY_BASE,"http://www.3ycy.com/static/images/logo-1.png?ver=20170308-02", null));
+        menu.add(new MenuBean(Menus.MENU_WOAIMEIZI_ID, Menus.MENU_WOAIMEIZI,
+                Net.WOAIMEIZI_BASE,"https://www.woaimeizi.com/wp-content/uploads/2019/05/woaimeizi.png", null));
+        menu.add(new MenuBean(Menus.MENU_MEINVYH_ID, Menus.MENU_MEINVYH,
+                Net.MEINVYH_BASE, "http://s9.syasn.com/www.2mmei.net/2mmei.com-l42r43l00el3l8s3g4hn5ia17p72wy01-1340x350.jpg", null));
+        menu.add(new MenuBean(Menus.MENU_NVSHENS_GALLERY_ID, Menus.MENU_NVSHENS,
+                Net.NVSHENS_BASE, "https://img.onvshen.com:85/article/11081/01.jpg", null));
+        menu.add(new MenuBean(Menus.MENU_NVSHENS_TAG_ID, Menus.MENU_NVSHENS,
+                Net.NVSHENS_BASE, "https://img.onvshen.com:85/girl/22162/22162.jpg", null));
+        menu.add(new MenuBean(Menus.MENU_ISAOB_ID, Menus.MENU_ISAOB,
+                Net.ISAOB_BASE, "http://www.isaob.com/logo1.png", null));
         menu.add(new MenuBean(Menus.MENU_MMJPG_ID, Menus.MENU_MMJPG,
                 Net.MMJPG_BASE, "http://img.mmjpg.com/2015/295/1.jpg", null));
         menu.add(new MenuBean(Menus.MENU_ITUBA_ID, Menus.MENU_ITUBA,

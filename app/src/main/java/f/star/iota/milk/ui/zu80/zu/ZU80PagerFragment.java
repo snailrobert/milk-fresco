@@ -30,7 +30,7 @@ public class ZU80PagerFragment extends PagerFragment {
     protected TitlePagerAdapter getPagerAdapter() {
         List<String> titles = new ArrayList<>();
         List<Fragment> fragments = new ArrayList<>();
-        String s = ReadResourceUtil.readResource(R.raw.zu80);
+        String s = ReadResourceUtil.readBufferResource(R.raw.zu80);
         Elements selects = Jsoup.parseBodyFragment(s).select("li");
         for(Element li : selects){
             String url = li.select("a").attr("href");
